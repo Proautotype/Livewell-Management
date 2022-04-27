@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="494.0" prefWidth="336.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.signIn.SettingsController">
+   <children>
+      <HBox alignment="CENTER" prefHeight="47.0" prefWidth="387.0" spacing="20.0" style="-fx-background-color: #5d5d5d;">
+         <children>
+            <Label alignment="CENTER" contentDisplay="GRAPHIC_ONLY" prefHeight="46.0" prefWidth="44.0" text="SETTING" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="35.0" fitWidth="33.0">
+                     <image>
+                        <Image url="@FontAwesome_f085(0)_32.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Label>
+         </children>
+      </HBox>
+      <Label alignment="CENTER" prefHeight="50.0" prefWidth="387.0" text="MANAGE CONNECTIONS" textAlignment="CENTER" />
+      <AnchorPane prefHeight="403.0" prefWidth="336.0" style="-fx-background-color: #5d5d5d;">
+         <children>
+            <JFXComboBox fx:id="cbo_connections" editable="true" focusColor="#fcfcfc" layoutX="14.0" layoutY="360.0" prefHeight="27.0" prefWidth="183.0" unFocusColor="#ffe605" />
+            <JFXButton layoutX="205.0" layoutY="360.0" onAction="#do_" style="-fx-border-color: #ffe605;" text="Test Connection" textFill="#ffe605" />
+            <TextField fx:id="txt_ip" layoutX="28.0" layoutY="52.0" prefHeight="25.0" prefWidth="190.0" promptText="IP Address" />
+            <TextField fx:id="txt_port" layoutX="220.0" layoutY="52.0" prefHeight="25.0" prefWidth="87.0" promptText="Port" />
+            <PasswordField fx:id="txt_username" layoutX="28.0" layoutY="126.0" prefHeight="25.0" prefWidth="281.0" promptText="username" />
+            <PasswordField fx:id="txt_password" layoutX="28.0" layoutY="172.0" prefHeight="25.0" prefWidth="281.0" promptText="password" />
+            <JFXButton layoutX="28.0" layoutY="250.0" onAction="#do_save" prefHeight="25.0" prefWidth="281.0" style="-fx-background-color: cyan;" text="Change" />
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>

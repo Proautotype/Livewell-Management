@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import org.controlsfx.control.MaskerPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="693.0" prefWidth="716.0" style="-fx-background-color: rgb(0,0,0,0.5);" stylesheets="@nSign_StyleSheet.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.signIn.nSign_Controller">
+   <children>
+      <Pane fx:id="pane_selector" layoutX="134.0" layoutY="56.0" prefHeight="616.0" prefWidth="450.0">
+         <children>
+            <VBox fx:id="container_vbox" alignment="TOP_CENTER" layoutX="42.0" layoutY="41.0" prefHeight="534.0" prefWidth="366.0" spacing="5.0" style="-fx-background-color: white;">
+               <padding>
+                  <Insets left="10.0" right="10.0" top="20.0" />
+               </padding>
+               <children>
+                  <ImageView fitHeight="123.0" fitWidth="200.0">
+                     <image>
+                        <Image url="@../../png/livelogo.png" />
+                     </image>
+                  </ImageView>
+                  <Pane layoutX="20.0" layoutY="330.0" prefHeight="24.0" prefWidth="346.0" />
+                  <Pane prefHeight="243.0" prefWidth="346.0">
+                     <children>
+                        <JFXTextField fx:id="txt_userName" alignment="CENTER" labelFloat="true" layoutX="35.0" layoutY="42.0" prefHeight="41.0" prefWidth="296.0" promptText="Username or Email">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXPasswordField fx:id="txt_password" alignment="CENTER" layoutX="35.0" layoutY="141.0" prefHeight="42.0" prefWidth="296.0" promptText="Password">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </JFXPasswordField>
+                        <ImageView layoutX="5.0" layoutY="48.0">
+                           <image>
+                              <Image url="@../../png/icons8_female_profile_30px.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="5.0" layoutY="147.0">
+                           <image>
+                              <Image url="@../../png/icons8_password_50px.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="20.0" layoutY="370.0" prefHeight="34.0" prefWidth="346.0" />
+                  <Pane prefHeight="0.0" prefWidth="346.0" />
+                  <JFXButton fx:id="btn_sign" onAction="#do_sign" prefHeight="46.0" prefWidth="306.0" text="Submit" />
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+      <VBox alignment="CENTER" layoutX="14.0" layoutY="42.0" prefHeight="645.0" prefWidth="119.0" spacing="7.0">
+         <children>
+            <JFXButton fx:id="btn_consult" buttonType="RAISED" contentDisplay="TOP" layoutX="10.0" layoutY="10.0" prefHeight="115.0" prefWidth="143.0" style="-fx-background-color: #ffaf4f;" styleClass="btnDept" text="CONSULTS">
+               <graphic>
+                  <ImageView fitHeight="93.0" fitWidth="100.0">
+                     <image>
+                        <Image url="@../../png/icons8_doctor_male_100px.png" />
+                     </image>
+                  </ImageView>
+               </graphic></JFXButton>
+            <JFXButton fx:id="btn_lab" buttonType="RAISED" contentDisplay="TOP" layoutX="10.0" layoutY="376.0" prefHeight="115.0" prefWidth="143.0" style="-fx-background-color: #1ad0ed;" styleClass="btnDept" text="LABORATORY">
+               <graphic>
+                  <ImageView fitHeight="43.0" fitWidth="46.0">
+                     <image>
+                        <Image url="@../../png/icons8_lab_items_32px.png" />
+                     </image>
+                  </ImageView>
+               </graphic></JFXButton>
+            <JFXButton fx:id="btn_opd" contentDisplay="TOP" layoutX="10.0" layoutY="498.0" prefHeight="115.0" prefWidth="143.0" style="-fx-background-color: #4FC3F7;" styleClass="btnDept" text="OPD">
+               <graphic>
+                  <ImageView fitHeight="82.0" fitWidth="87.0">
+                     <image>
+                        <Image url="@../../png/icons8_nurse_200px_1.png" />
+                     </image>
+                  </ImageView>
+               </graphic></JFXButton>
+            <JFXButton fx:id="btn_pharm" buttonType="RAISED" contentDisplay="TOP" layoutX="10.0" layoutY="254.0" prefHeight="115.0" prefWidth="143.0" style="-fx-background-color: #fffa85;" styleClass="btnDept" text="PHARMACY">
+               <graphic>
+                  <ImageView>
+                     <image>
+                        <Image url="@../../png/icons8_alternative_herbal_medicine_64px.png" />
+                     </image>
+                  </ImageView>
+               </graphic></JFXButton>
+            <JFXButton fx:id="btn_records" contentDisplay="TOP" layoutX="10.0" layoutY="629.0" prefHeight="115.0" prefWidth="143.0" style="-fx-background-color: #ffacc6;" styleClass="btnDept" text="RECORDS">
+               <graphic>
+                  <ImageView>
+                     <image>
+                        <Image url="@../../png/icons8_documents_48px.png" />
+                     </image>
+                  </ImageView>
+               </graphic></JFXButton>
+         </children>
+      </VBox>
+      <VBox alignment="CENTER" layoutX="585.0" layoutY="56.0" prefHeight="210.0" prefWidth="119.0" spacing="5.0">
+         <children>
+            <JFXButton fx:id="btn_acc" buttonType="RAISED" contentDisplay="TOP" prefHeight="85.0" prefWidth="115.0" style="-fx-background-color: #2dffab;" styleClass="btnDept_r" text="ACCOUNTS">
+               <graphic>
+                  <ImageView fitHeight="75.0" fitWidth="90.0">
+                     <image>
+                        <Image url="@../../png/icons8_accounting_240px.png" />
+                     </image>
+                  </ImageView>
+               </graphic></JFXButton>
+            <JFXButton fx:id="btn_stores" buttonType="RAISED" contentDisplay="TOP" prefHeight="93.0" prefWidth="115.0" style="-fx-background-color: #fb4078;" styleClass="btnDept_r" text="STORES">
+               <graphic>
+                  <ImageView fitHeight="72.0" fitWidth="76.0">
+                     <image>
+                        <Image url="@../../png/icons8_online_store_100px.png" />
+                     </image>
+                  </ImageView>
+               </graphic></JFXButton>
+            <JFXButton fx:id="btn_production" buttonType="RAISED" contentDisplay="TOP" layoutX="12.0" layoutY="119.0" prefHeight="93.0" prefWidth="115.0" style="-fx-background-color: #BA68C8;" styleClass="btnDept_r" text="PRODUCTION">
+               <graphic>
+                  <ImageView fitHeight="72.0" fitWidth="76.0">
+                     <image>
+                        <Image url="@../../png/icons8_gas_mask_100px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+         </children>
+      </VBox>
+      <Label fx:id="lbl_note" alignment="CENTER" layoutX="190.0" layoutY="651.0" prefHeight="36.0" prefWidth="425.0" textAlignment="CENTER" textFill="WHITE" />
+      <MaskerPane fx:id="masker" layoutX="134.0" layoutY="56.0" prefHeight="616.0" prefWidth="450.0" visible="false" />
+      <Pane layoutX="13.0" layoutY="4.0" prefHeight="46.0" prefWidth="691.0" style="-fx-background-color: white;">
+         <children>
+            <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="634.0" layoutY="9.0" onAction="#closeApplication" prefHeight="29.0" prefWidth="19.0">
+               <graphic>
+                  <ImageView fitHeight="21.0" fitWidth="21.0">
+                     <image>
+                        <Image url="@../../png/cancel_picho.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="btnAdmin" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" layoutX="14.0" layoutY="1.0" onAction="#open_admin" prefHeight="20.0" prefWidth="37.0" styleClass="btnAdmin" text="?">
+               <graphic>
+                  <ImageView fitHeight="36.0" fitWidth="34.0">
+                     <image>
+                        <Image url="@../../png/admin_.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <Label layoutX="152.0" layoutY="11.0" prefHeight="20.0" prefWidth="395.0" text="Livewell Hospital Management System Authentication Panel">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Label layoutX="498.0" layoutY="-71.0" text="LIVEWELL HERBAL CLINIC" textFill="#111010">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="btn_settings" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" layoutX="645.0" layoutY="638.0" onAction="#open_settings" prefHeight="41.0" prefWidth="45.0">
+         <graphic>
+            <ImageView fitHeight="26.0" fitWidth="29.0">
+               <image>
+                  <Image url="@../../png/settings.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+   </children>
+</AnchorPane>

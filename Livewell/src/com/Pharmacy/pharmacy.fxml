@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import org.controlsfx.control.MaskerPane?>
+
+<AnchorPane prefHeight="847.0" prefWidth="1405.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.Pharmacy.pharmacy_controller">
+   <children>
+    <AnchorPane layoutX="12.0" layoutY="2.0" maxHeight="-1.0" maxWidth="-1.0" prefHeight="835.0" prefWidth="1366.0">
+         <children>
+            <VBox alignment="TOP_RIGHT" layoutX="173.0" layoutY="61.0" prefHeight="299.0" prefWidth="1210.0" spacing="5.0" style="-fx-background-color: transparent;">
+               <children>
+                  <Label fx:id="pane_notica" alignment="CENTER" contentDisplay="CENTER" prefHeight="20.0" prefWidth="1210.0" style="-fx-background-color: DARKGRAY;" text="PRESCRIBED DRUGS" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TableView fx:id="table_of_presc" onMouseClicked="#table_clicked" prefHeight="303.0" prefWidth="1210.0" style="-fx-fixed-cell-size: 40; -fx-font-size: 13;" tableMenuButtonVisible="true">
+                    <columns>
+                        <TableColumn fx:id="col_code" prefWidth="62.0" text="Code" />
+                      <TableColumn fx:id="col_drug" prefWidth="380.0" style="-fx-size: 10;" text="MEDICINE" />
+                        <TableColumn fx:id="col_type" prefWidth="66.0" text="TYPE" />
+                      <TableColumn fx:id="col_dosage" prefWidth="356.0" text="DOSAGE " />
+                        <TableColumn fx:id="col_amount" minWidth="0.0" prefWidth="72.0" text="PRICE" />
+                        <TableColumn fx:id="col_input" prefWidth="154.0" text="INPUT" />
+                        <TableColumn fx:id="col_trigger" prefWidth="106.0" text="TRIGGER" />
+                    </columns>
+                  </TableView>
+                  <JFXButton fx:id="btn_enque" buttonType="RAISED" onAction="#do_enqueue" onMouseClicked="#enqueue" prefHeight="25.0" prefWidth="81.0" style="-fx-background-color: GRAY;" text="ENQUEUE" textFill="WHITE" />
+               </children>
+            </VBox>
+            <TitledPane layoutX="3.0" prefHeight="328.0" prefWidth="156.0" text="INCOMING">
+               <content>
+                  <JFXListView fx:id="list_incoming" editable="true" onMouseClicked="#incoming_selected_mouse" prefHeight="341.0" prefWidth="101.0" />
+               </content>
+            </TitledPane>
+            <HBox layoutX="173.0" prefHeight="57.0" prefWidth="839.0">
+               <children>
+                  <Label fx:id="lbl_opd_id" alignment="CENTER" prefHeight="50.0" prefWidth="117.0" style="-fx-background-color: GRAY;" text="OPD ID" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbl_name" alignment="CENTER" prefHeight="50.0" prefWidth="308.0" style="-fx-background-color: DARKGRAY;" text="NAME" textFill="WHITE" wrapText="true">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbl_sex" alignment="CENTER" prefHeight="50.0" prefWidth="96.0" style="-fx-background-color: GRAY;" text="SEX" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbl_age" alignment="CENTER" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: DARKGRAY;" text="AGE" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbl_contact" alignment="CENTER" prefHeight="50.0" prefWidth="142.0" style="-fx-background-color: GRAY;" text="CONTACT" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbl_crest" alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="69.0" style="-fx-background-color: lightgreen;" text="CREST" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox layoutX="166.0" layoutY="378.0" prefHeight="439.0" prefWidth="377.0" spacing="10.0">
+               <children>
+                  <VBox prefHeight="439.0" prefWidth="290.0" spacing="5.0">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="26.0" prefWidth="427.0" style="-fx-background-color: darkgray;" text="COMPLETED PRESCRIPTION LIST" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <TableView fx:id="table_costing" prefHeight="362.0" prefWidth="299.0">
+                          <columns>
+                            <TableColumn fx:id="col_drug_code" prefWidth="50.000030517578125" text="CODE" />
+                            <TableColumn fx:id="col_price" minWidth="6.0" prefWidth="145.00003051757812" text="PRICE" />
+                              <TableColumn fx:id="col_costing_total" prefWidth="79.0" text="LINE-TOTAL" />
+                          </columns>
+                        </TableView>
+                        <HBox prefHeight="38.0" prefWidth="427.0" style="-fx-background-color: lightgreen;">
+                           <children>
+                              <Label contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="39.0" prefWidth="173.0" text="TOTAL" textAlignment="CENTER">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lbl_total" contentDisplay="CENTER" layoutX="194.0" layoutY="10.0" prefHeight="37.0" prefWidth="249.0" textAlignment="CENTER">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                              <JFXButton alignment="CENTER" contentDisplay="GRAPHIC_ONLY" onAction="#do_sell" prefHeight="53.0" prefWidth="74.0" textOverrun="WORD_ELLIPSIS">
+                                 <graphic>
+                                    <ImageView fitHeight="31.0" fitWidth="34.0">
+                                       <image>
+                                          <Image url="@../../png/shopping-bag.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <TitledPane layoutX="4.0" layoutY="581.0" prefHeight="247.0" prefWidth="156.0" text="HISTORY DATES ">
+               <content>
+                  <JFXListView fx:id="list_history" editable="true" onMouseClicked="#history_selected_mouse_clicked" prefHeight="341.0" prefWidth="101.0" />
+               </content>
+            </TitledPane>
+            <Label alignment="CENTER" layoutX="6.0" layoutY="380.0" prefHeight="25.0" prefWidth="149.0" text="SEARCH HISTORY ">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <JFXListView fx:id="list_history_dates" editable="true" layoutX="4.0" layoutY="441.0" onMouseClicked="#cbo_load_avbl_prescription_ids" prefHeight="135.0" prefWidth="156.0" />
+            <TextField fx:id="txt_history_srch" layoutX="5.0" layoutY="407.0" prefHeight="30.0" prefWidth="117.0">
+               <font>
+                  <Font name="System Italic" size="14.0" />
+               </font>
+            </TextField>
+            <Button contentDisplay="GRAPHIC_ONLY" layoutX="125.0" layoutY="409.0" mnemonicParsing="false" onAction="#history_find_by_pid" prefHeight="20.0" prefWidth="27.0" text="Button">
+               <graphic>
+                  <ImageView fitHeight="18.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../png/icons8_find_and_replace_64px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <JFXButton buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" layoutX="1350.0" layoutY="36.0" onAction="#do_select_all" prefHeight="17.0" prefWidth="31.0" text="M">
+               <graphic>
+                  <ImageView fitHeight="16.0" fitWidth="17.0">
+                     <image>
+                        <Image url="@../../png/icons8_select_26px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <Pane layoutX="526.0" layoutY="378.0" prefHeight="441.0" prefWidth="851.0" style="-fx-background-color: #ffb570;">
+               <children>
+                  <VBox layoutX="113.0" layoutY="5.0" prefHeight="185.0" prefWidth="404.0" spacing="5.0">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="25.0" prefWidth="537.0" style="-fx-background-color: #67bac5;" text="PAYMENT SECTION" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <TableView fx:id="table_costing1" prefHeight="127.0" prefWidth="367.0">
+                           <columns>
+                              <TableColumn fx:id="col_drug_code1" prefWidth="71.0" text="DRUG ID" />
+                              <TableColumn fx:id="col_price1" minWidth="6.0" prefWidth="126.0" text="PRICE" />
+                              <TableColumn fx:id="col_costing_total1" prefWidth="163.0" text="LINE TOTAL" />
+                           </columns>
+                        </TableView>
+                        <HBox alignment="CENTER" spacing="5.0">
+                           <children>
+                              <Label prefHeight="24.0" prefWidth="46.0" style="-fx-background-color: DARKGRAY;" text="DEBT :" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="2.0" />
+                                 </padding>
+                              </Label>
+                              <Label fx:id="ps_lbl_debt" layoutX="10.0" layoutY="10.0" prefHeight="24.0" prefWidth="51.0" style="-fx-background-color: #67bac5;" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="10.0" layoutY="10.0" prefHeight="24.0" prefWidth="113.0" style="-fx-background-color: DARKGRAY;" text="CURRENT COST : " textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="2.0" />
+                                 </padding>
+                              </Label>
+                              <Label fx:id="ps_lbl_curr_cost" layoutX="61.0" layoutY="10.0" prefHeight="24.0" prefWidth="59.0" style="-fx-background-color: #67bac5;" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="2.0" />
+                                 </padding>
+                              </Label>
+                              <Label layoutX="10.0" layoutY="10.0" prefHeight="24.0" prefWidth="53.0" style="-fx-background-color: DARKGRAY;" text="TOTAL " textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="2.0" />
+                                 </padding>
+                              </Label>
+                              <Label fx:id="ps_lbl_total" layoutX="61.0" layoutY="10.0" prefHeight="24.0" prefWidth="57.0" style="-fx-background-color: #dd6239;" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="2.0" />
+                                 </padding>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" layoutX="527.0" layoutY="5.0" prefHeight="185.0" prefWidth="81.0" spacing="7.0" style="-fx-background-color: #67bac5;">
+                     <children>
+                        <TextField fx:id="txt_pay" alignment="CENTER" prefHeight="39.0" prefWidth="61.0" promptText="PAY" style="-FX-TEXT-FILL: GRAY;">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </TextField>
+                        <JFXButton buttonType="RAISED" onAction="#do_curl" prefHeight="41.0" prefWidth="81.0" style="-fx-background-color: #ffb570;" text="curl" textFill="WHITE" />
+                        <Pane prefHeight="38.0" prefWidth="69.0" />
+                        <TextField fx:id="txt_balance" alignment="CENTER" editable="false" prefHeight="44.0" prefWidth="69.0" style="-FX-TEXT-FILL: GRAY;">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </TextField>
+                        <JFXButton fx:id="btn_attach" buttonType="RAISED" layoutX="10.0" layoutY="68.0" onAction="#do_attach" prefHeight="18.0" prefWidth="122.0" style="-fx-background-color: #ffb570;" text="Attach" textFill="WHITE" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="TOP_CENTER" layoutX="113.0" layoutY="212.0" prefHeight="233.0" prefWidth="728.0" spacing="5.0">
+                     <children>
+                        <Pane prefHeight="35.0" prefWidth="660.0" style="-fx-background-color: #67bac5;">
+                           <children>
+                              <Label layoutX="420.0" layoutY="13.0" text=" ACCOUNT HISTORY" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="cbo_search" layoutX="7.0" layoutY="4.0" onAction="#mob_search" prefHeight="25.0" prefWidth="156.0" promptText="Search " />
+                              <TextField fx:id="txt_search" layoutX="176.0" layoutY="4.0" prefHeight="25.0" prefWidth="126.0" />
+                              <Button fx:id="btn_search" layoutX="313.0" layoutY="4.0" mnemonicParsing="false" onAction="#make_search" prefHeight="25.0" prefWidth="46.0">
+                                 <graphic>
+                                    <ImageView fitHeight="17.0" fitWidth="17.0">
+                                       <image>
+                                          <Image url="@../../png/magnifying-glass.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="181.0" prefWidth="714.0">
+                           <children>
+                              <TableView fx:id="tableView_today_history" layoutX="-1.0" layoutY="12.0" onMouseClicked="#listView_History_mouseClicked" prefHeight="171.0" prefWidth="728.0" style="-fx-background-color: #67bac5;">
+                                 <columns>
+                                    <TableColumn fx:id="col_history_pid" prefWidth="79.0" text="PID" />
+                                    <TableColumn fx:id="col_history_date" prefWidth="114.0" text="DATE" />
+                                    <TableColumn fx:id="col_history_particulas" prefWidth="274.0" text="PARTICULAS" />
+                                    <TableColumn fx:id="col_history_cost" prefWidth="82.0" text="COST" />
+                                    <TableColumn fx:id="col_history_amt_paid" prefWidth="77.0" text="PAID" />
+                                    <TableColumn fx:id="col_history_balance" prefWidth="86.0" text="BALANCE" />
+                                 </columns>
+                              </TableView>
+                           </children>
+                        </Pane>
+                     </children>
+                  </VBox>
+                  <TitledPane layoutX="2.0" layoutY="5.0" prefHeight="431.0" prefWidth="100.0" style="-fx-background-color: lightgreen;" text="RELEASED">
+                     <content>
+                        <JFXListView fx:id="list_out_going" editable="true" onMouseClicked="#doneWith_mouseClicked" prefHeight="341.0" prefWidth="101.0" style="-fx-background-color: #ffb570;" />
+                     </content>
+                  </TitledPane>
+                  <LineChart fx:id="chart_line" layoutX="596.0" prefHeight="210.0" prefWidth="250.0">
+                     <xAxis>
+                        <CategoryAxis side="BOTTOM" />
+                     </xAxis>
+                     <yAxis>
+                        <NumberAxis side="LEFT" />
+                     </yAxis>
+                  </LineChart>
+               </children>
+            </Pane>
+         </children>
+    </AnchorPane>
+      <MaskerPane fx:id="parent_Masker" prefHeight="754.0" prefWidth="1366.0" visible="false" />
+   </children>
+</AnchorPane>

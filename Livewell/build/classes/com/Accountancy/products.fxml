@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import org.controlsfx.control.MaskerPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="772.0" prefWidth="591.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.Accountancy.ProductsController">
+   <children>
+      <Pane layoutY="-1.0" prefHeight="63.0" prefWidth="591.0" style="-fx-background-color: darkgray;">
+         <children>
+            <Label layoutX="100.0" layoutY="17.0" text="PRODUCTION MATERIALS PROPERTIES" textFill="WHITE">
+               <font>
+                  <Font name="Gill Sans Ultra Bold Condensed" size="24.0" />
+               </font>
+            </Label>
+            <Circle fx:id="circ_indicator" fill="DODGERBLUE" layoutX="14.0" layoutY="14.0" radius="10.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: lightgreen;" />
+         </children>
+      </Pane>
+      <Label alignment="CENTER" layoutX="6.0" layoutY="99.0" prefHeight="20.0" prefWidth="78.0" style="-fx-background-color: #DBDBDB;" text="PRODUCT ID" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txt_pid" layoutX="6.0" layoutY="125.0" prefHeight="35.0" prefWidth="78.0" promptText="000">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <Label alignment="CENTER" layoutX="88.0" layoutY="99.0" prefHeight="20.0" prefWidth="108.0" style="-fx-background-color: #DBDBDB;" text="PRODUCT NAME" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txt_pname" layoutX="88.0" layoutY="125.0" onKeyTyped="#txt_pname_textIn" prefHeight="35.0" prefWidth="361.0" promptText="product name">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <Label alignment="CENTER" layoutX="452.0" layoutY="99.0" prefHeight="20.0" prefWidth="68.0" style="-fx-background-color: #DBDBDB;" text="U PRICE" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txt_uprice" layoutX="454.0" layoutY="125.0" prefHeight="35.0" prefWidth="68.0" promptText="0.00">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <TableView fx:id="table_pmp" layoutX="11.0" layoutY="171.0" prefHeight="567.0" prefWidth="573.0">
+        <columns>
+          <TableColumn fx:id="col_pid" prefWidth="75.0" text="PRODUCT" />
+          <TableColumn fx:id="col_pname" prefWidth="422.0" text="PRODUCT NAME" />
+            <TableColumn fx:id="col_uprice" minWidth="3.0" prefWidth="75.0" text="UNIT PRICE" />
+        </columns>
+      </TableView>
+      <Label layoutX="14.0" layoutY="750.0" text="TOTAL RECORDED : " />
+      <Label fx:id="lbl_total_records" layoutX="122.0" layoutY="748.0" prefHeight="17.0" prefWidth="68.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <MaskerPane fx:id="masker" layoutY="65.0" prefHeight="673.0" prefWidth="591.0" visible="false" />
+      <JFXButton layoutX="528.0" layoutY="124.0" onAction="#make_save" prefHeight="35.0" prefWidth="52.0" style="-fx-background-color: #acecaa;" text="SAVE" />
+   </children>
+</AnchorPane>

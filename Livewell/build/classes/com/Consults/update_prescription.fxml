@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import org.controlsfx.control.MaskerPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="523.0" prefWidth="978.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.Consults.Update_prescriptionController">
+   <children>
+      <MaskerPane fx:id="masker" prefHeight="533.0" prefWidth="759.0" visible="false" />
+      <Label layoutX="14.0" layoutY="26.0" text="PATIENT ID " />
+      <Label fx:id="txt_pid" layoutX="95.0" layoutY="25.0" prefHeight="19.0" prefWidth="98.0">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="193.0" layoutY="26.0" text="PATIENT NAME:" />
+      <Label fx:id="txt_name" layoutX="282.0" layoutY="24.0" prefHeight="19.0" prefWidth="268.0">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <BorderPane layoutX="12.0" layoutY="45.0" prefHeight="407.0" prefWidth="934.0">
+         <top>
+            <HBox alignment="CENTER_LEFT" prefHeight="28.0" prefWidth="737.0" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox prefHeight="59.0" prefWidth="935.0" spacing="5.0">
+                     <children>
+                        <HBox>
+                           <children>
+                              <TextField fx:id="txt_all_drug_part" prefHeight="25.0" prefWidth="917.0" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="43.0" prefWidth="738.0" spacing="5.0">
+                           <children>
+                              <TextField fx:id="txt_drug_code" layoutX="360.0" layoutY="10.0" prefHeight="25.0" prefWidth="85.0" promptText="Code" />
+                              <TextField fx:id="txt_drugs" prefHeight="25.0" prefWidth="335.0" promptText="DRUG" />
+                              <TextField fx:id="txt_drug_type" layoutX="525.0" layoutY="10.0" prefHeight="25.0" prefWidth="69.0" promptText="TYPE" />
+                              <TextField fx:id="txt_presc_dosage" prefHeight="25.0" prefWidth="300.0" promptText="DOSAGE" />
+                              <TextField fx:id="txt_presc_amount" prefHeight="25.0" prefWidth="73.0" promptText="PRICE" />
+                              <JFXButton alignment="CENTER" onAction="#add_single_prescription" prefHeight="17.0" prefWidth="38.0" style="-fx-background-color: tomato;" text="+" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </JFXButton>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <Region prefHeight="43.0" prefWidth="12.0" />
+                  <Region layoutX="649.0" layoutY="10.0" prefHeight="43.0" prefWidth="12.0" />
+               </children>
+            </HBox>
+         </top>
+         <center>
+            <Pane BorderPane.alignment="CENTER">
+               <children>
+                  <TableView fx:id="table_of_presc" onMouseClicked="#table_click_activity" prefHeight="348.0" prefWidth="934.0">
+                    <columns>
+                        <TableColumn fx:id="col_drug_code" prefWidth="75.0" text="CODE" />
+                      <TableColumn fx:id="col_drug" prefWidth="293.0" text="DRUG" />
+                        <TableColumn fx:id="col_drug_type" prefWidth="81.0" text="TYPE" />
+                      <TableColumn fx:id="col_dosage" prefWidth="360.0" text="DOSAGE" />
+                        <TableColumn fx:id="col_amount" prefWidth="97.0" text="PRICE" />
+                    </columns>
+                     <contextMenu>
+                        <ContextMenu>
+                           <items>
+                              <MenuItem mnemonicParsing="false" onAction="#remove_single_prescription" text="Remove Selected Row" />
+                              <MenuItem mnemonicParsing="false" onAction="#remove_single_prescription" text="Edit Selected Row" />
+                           </items>
+                        </ContextMenu>
+                     </contextMenu>
+                  </TableView>
+               </children>
+            </Pane>
+         </center>
+      </BorderPane>
+      <Label layoutX="14.0" layoutY="462.0" text="PRID:" />
+      <Label fx:id="txt_prid" layoutX="57.0" layoutY="461.0" prefHeight="19.0" prefWidth="128.0">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="586.0" layoutY="25.0" text="DID:" />
+      <Label fx:id="txt_pass_id" layoutX="617.0" layoutY="25.0" prefHeight="19.0" prefWidth="128.0">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <JFXButton layoutX="862.0" layoutY="480.0" onAction="#done" prefHeight="25.0" prefWidth="85.0" style="-fx-background-color: SILVER;" text="APPLY" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="753.0" layoutY="480.0" onAction="#reload" prefHeight="25.0" prefWidth="85.0" style="-fx-background-color: SILVER;" text="RELOAD" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton alignment="CENTER" layoutX="950.0" layoutY="41.0" onAction="#calculate_quantity" prefHeight="22.0" prefWidth="28.0" style="-fx-background-color: orange;" text="c" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="742.0" prefWidth="1361.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.Laboratory.Urine_REController">
+   <children>
+      <MenuBar>
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem fx:id="menu_save" mnemonicParsing="false" text="SAVE">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem fx:id="menu_update" mnemonicParsing="false" text="UPDATE">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="U" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <HBox alignment="CENTER_RIGHT" prefHeight="56.0" prefWidth="1361.0" spacing="5.0">
+         <children>
+            <Label prefHeight="17.0" prefWidth="122.0" text="SELECTED PATIENT:" />
+            <Label fx:id="lbl_urine_user_details" prefHeight="19.0" prefWidth="347.0">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </Label>
+            <Pane prefHeight="32.0" prefWidth="32.0" />
+         </children>
+      </HBox>
+      <BorderPane prefHeight="709.0" prefWidth="1361.0">
+         <center>
+            <Accordion fx:id="parent_anchorDion" prefHeight="702.0" prefWidth="1246.0" BorderPane.alignment="CENTER">
+              <panes>
+                <TitledPane fx:id="tPane_urine" animated="false" text="URINE" textFill="#8c8c8c">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <BorderPane layoutX="14.0" layoutY="7.0" prefHeight="593.0" prefWidth="1340.0">
+                                 <center>
+                                    <TableView fx:id="table_urine" onMouseClicked="#table_urine_mouse_click" prefHeight="535.0" prefWidth="1084.0">
+                                      <columns>
+                                          <TableColumn fx:id="col_urine_pid" prefWidth="72.0" text="PID" />
+                                        <TableColumn fx:id="col_urine_appearance" prefWidth="107.0" text="APPEARANCE" />
+                                        <TableColumn fx:id="col_urine_colour" prefWidth="76.0" text="COLOUR" />
+                                          <TableColumn fx:id="col_urine_leukocytes" prefWidth="88.0" text="LEUKOCYTES" />
+                                          <TableColumn fx:id="col_urine_uroglobin" prefWidth="111.0" text="UROBILINOGEN" />
+                                          <TableColumn fx:id="col_urine_bilirubin" prefWidth="83.0" text="BILIRUBIN" />
+                                          <TableColumn fx:id="col_urine_blood" prefWidth="75.0" text="BLOOD" />
+                                          <TableColumn fx:id="col_urine_nitrate" prefWidth="87.0" text="NITRATE" />
+                                          <TableColumn fx:id="col_urine_ph" prefWidth="53.0" text="PH" />
+                                          <TableColumn fx:id="col_urine_spGravity" prefWidth="93.0" text="SP GRAVITY" />
+                                          <TableColumn fx:id="col_urine_protein" prefWidth="77.0" text="PROTEIN" />
+                                          <TableColumn fx:id="col_urine_glucose" prefWidth="77.0" text="GLUCOSE" />
+                                          <TableColumn fx:id="col_urine_ketones" prefWidth="99.0" text="KETONES" />
+                                      </columns>
+                                    </TableView>
+                                 </center>
+                                 <left>
+                                    <Pane prefHeight="582.0" prefWidth="256.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <GridPane fx:id="parent_urinalysis" layoutX="7.0" prefHeight="538.0" prefWidth="242.0">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="254.0" minWidth="10.0" prefWidth="119.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="225.0" minWidth="10.0" prefWidth="109.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <TextField fx:id="txt_appearance" prefHeight="25.0" prefWidth="56.0" GridPane.columnIndex="1" />
+                                                <Label text="APPEARANCE" textFill="#9a9a9a">
+                                                   <font>
+                                                      <Font name="System Bold" size="13.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label text="COLOUR" textFill="#9a9a9a" GridPane.rowIndex="1">
+                                                   <font>
+                                                      <Font name="System Bold" size="13.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label text="LEUKOCYTES" textFill="#9a9a9a" GridPane.rowIndex="2">
+                                                   <font>
+                                                      <Font name="System Bold" size="13.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label text="UROBILINOGEN" textFill="#9a9a9a" GridPane.rowIndex="3">
+                                                   <font>
+                                                      <Font name="System Bold" size="13.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label text="BILIRUBIN" textFill="#9a9a9a" GridPane.rowIndex="4">
+                                                   <font>
+                                                      <Font name="System Bold" size="13.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label text="BLOOD" textFill="#9a9a9a" GridPane.rowIndex="5">
+                                                   <font>
+                                                      <Font name="System Bold" size="13.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label text="NITRITE" textFill="#9a9a9a" GridPane.rowIndex="6">
+                                                   <font>
+                                                      <Font name="System Bold" size="13.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField fx:id="txt_colour" prefHeight="25.0" prefWidth="56.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                <TextField fx:id="txt_leukocytes" prefHeight="25.0" prefWidth="57.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                <TextField fx:id="txt_UROBILINOGEN" prefHeight="25.0" prefWidth="56.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                <TextField fx:id="txt_BILIRUBIN" prefHeight="25.0" prefWidth="57.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                                <TextField fx:id="txt_BLOOD" prefHeight="25.0" prefWidth="58.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                                <TextField fx:id="txt_NITRITE" prefHeight="25.0" prefWidth="194.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                                <TextField fx:id="txt_PH" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                                                <TextField fx:id="txt_SPECIFIC_GRAVITY" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                                                <TextField fx:id="txt_PROTEIN" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                                                <Label text="PH" textFill="#9a9a9a" GridPane.rowIndex="7">
+                                                   <font>
+                                                      <Font name="System Bold" size="13.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label text="SPECIFIC GRAVITY" textFill="#9a9a9a" GridPane.rowIndex="8">
+                                                   <font>
+                                                      <Font name="System Bold" size="13.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label layoutX="10.0" layoutY="249.0" text="PROTEIN" textFill="#9a9a9a" GridPane.rowIndex="9">
+                                                   <font>
+                                                      <Font name="System Bold" size="13.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label layoutX="10.0" layoutY="282.0" text="GLUCOSE" textFill="#9a9a9a" GridPane.rowIndex="10">
+                                                   <font>
+                                                      <Font name="System Bold" size="13.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label layoutX="10.0" layoutY="284.0" text="KETONES" textFill="#9a9a9a" GridPane.rowIndex="11">
+                                                   <font>
+                                                      <Font name="System Bold" size="13.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField fx:id="txt_GLUCOSE" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                                                <TextField fx:id="txt_KETONES" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </Pane>
+                                 </left>
+                                 <top>
+                                    <HBox alignment="CENTER_RIGHT" prefHeight="33.0" prefWidth="1340.0" spacing="5.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <Button mnemonicParsing="false" onAction="#save_urine" text="Save" />
+                                          <Button mnemonicParsing="false" onAction="#update_urine" text="Rework" />
+                                          <ComboBox fx:id="cbo_srch_pattern" onAction="#do_urine_mob_search" prefHeight="15.0" prefWidth="150.0" />
+                                          <TextField fx:id="txt_general_srch_box" onKeyPressed="#do_spec_search" prefHeight="25.0" prefWidth="250.0" />
+                                          <Button mnemonicParsing="false" onAction="#urine_make_search" prefHeight="16.0" prefWidth="99.0" text="Search" />
+                                       </children>
+                                    </HBox>
+                                 </top>
+                              </BorderPane>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </TitledPane>
+                <TitledPane fx:id="tPane_microscopy" animated="false" text="MICROSCOPY" textFill="#8c8c8c">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="615.0" prefWidth="1359.0">
+                           <children>
+                              <BorderPane layoutX="14.0" layoutY="7.0" prefHeight="589.0" prefWidth="1341.0">
+                                 <center>
+                                    <Pane prefHeight="553.0" prefWidth="1044.0">
+                                       <children>
+                                          <TableView fx:id="tableView_microscopy" layoutX="6.0" prefHeight="553.0" prefWidth="1049.0">
+                                            <columns>
+                                              <TableColumn fx:id="col_microscopy_pid" prefWidth="75.0" text="PID" />
+                                              <TableColumn fx:id="col_microscopy_pCells" prefWidth="75.0" text="PLUS CELLS" />
+                                                <TableColumn fx:id="col_microscopy_eCells" prefWidth="86.0" text="EPITH CELLS" />
+                                                <TableColumn fx:id="col_microscopy_rbs" prefWidth="64.0" text="RBS" />
+                                                <TableColumn fx:id="col_microscopy_yCells" prefWidth="92.0" text="YEAST CELLS" />
+                                                <TableColumn fx:id="col_microscopy_casts" prefWidth="75.0" text="CASTS" />
+                                                <TableColumn fx:id="col_microscopy_crystals" prefWidth="75.0" text="CRYSTALS" />
+                                                <TableColumn fx:id="col_microscopy_tVaginals" prefWidth="101.0" text="T VAGINALIS" />
+                                                <TableColumn fx:id="col_microscopy_sHaema" prefWidth="106.0" text="S HAEMATOBIUM" />
+                                                <TableColumn fx:id="col_microscopy_bacteria" prefWidth="91.0" text="BACTERIA" />
+                                                <TableColumn fx:id="col_microscopy_others" prefWidth="112.0" text="OTHERS" />
+                                                <TableColumn fx:id="col_microscopy_date" minWidth="0.0" prefWidth="87.0" text="DATE" />
+                                            </columns>
+                                          </TableView>
+                                       </children>
+                                    </Pane>
+                                 </center>
+                                 <top>
+                                    <HBox alignment="CENTER_RIGHT" prefHeight="36.0" prefWidth="1324.0" spacing="5.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <Button mnemonicParsing="false" onAction="#save_microscopy" text="Save" />
+                                          <Button mnemonicParsing="false" onAction="#update_microscopy" text="Rework" />
+                                          <ComboBox fx:id="cbo_microscopy" onAction="#do_microscopy_mob_search" prefHeight="15.0" prefWidth="150.0" />
+                                          <TextField fx:id="txt_microscopy_srch" onKeyPressed="#do_spec_search" prefHeight="25.0" prefWidth="250.0" />
+                                          <Button mnemonicParsing="false" onAction="#microscopy_make_search" prefHeight="16.0" prefWidth="99.0" text="Search" />
+                                       </children>
+                                    </HBox>
+                                 </top>
+                                 <left>
+                                    <GridPane fx:id="parent_microscopy" prefHeight="553.0" prefWidth="275.0" BorderPane.alignment="CENTER">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="254.0" minWidth="10.0" prefWidth="132.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="225.0" minWidth="10.0" prefWidth="159.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <TextField fx:id="txt_PLUS_CELLS" prefHeight="25.0" prefWidth="56.0" GridPane.columnIndex="1" />
+                                          <Label text="PLUS CELLS" textFill="#9a9a9a">
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="EPITH CELLS" textFill="#9a9a9a" GridPane.rowIndex="1">
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Rbs" textFill="#9a9a9a" GridPane.rowIndex="2">
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="YEAST CELLS" textFill="#9a9a9a" GridPane.rowIndex="3">
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="CASTS" textFill="#9a9a9a" GridPane.rowIndex="4">
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="CRYSTALS" textFill="#9a9a9a" GridPane.rowIndex="5">
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="T. VAGINALIS" textFill="#9a9a9a" GridPane.rowIndex="6">
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="txt_EPITH_CELLS" prefHeight="25.0" prefWidth="56.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <TextField fx:id="txt_Rbs" prefHeight="25.0" prefWidth="57.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <TextField fx:id="txt_YEAST_CELLS" prefHeight="25.0" prefWidth="56.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                          <TextField fx:id="txt_CASTS" prefHeight="25.0" prefWidth="57.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                          <TextField fx:id="txt_CRYSTALS" prefHeight="25.0" prefWidth="58.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                          <TextField fx:id="txt_T_VAGINALIS" prefHeight="25.0" prefWidth="194.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                          <TextField fx:id="txt_S_HAEMATOBIUM" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                                          <TextField fx:id="txt_BACTERIA" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                                          <TextField fx:id="txt_OTHERS" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                                          <Label text="S. HAEMATOBIUM" textFill="#9a9a9a" GridPane.rowIndex="7">
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="BACTERIA" textFill="#9a9a9a" GridPane.rowIndex="8">
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="10.0" layoutY="249.0" text="OTHERS" textFill="#9a9a9a" GridPane.rowIndex="9">
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </GridPane>
+                                 </left>
+                              </BorderPane>
+                           </children></AnchorPane>
+                  </content>
+                </TitledPane>
+                <TitledPane fx:id="tPane_stools" animated="false" text="STOOLS" textFill="#8c8c8c">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <BorderPane layoutX="3.0" prefHeight="608.0" prefWidth="1353.0">
+                                 <center>
+                                    <Pane prefHeight="537.0" prefWidth="1026.0">
+                                       <children>
+                                          <TableView fx:id="tableView_stools" prefHeight="555.0" prefWidth="1028.0">
+                                            <columns>
+                                              <TableColumn fx:id="col_stool_pid" prefWidth="85.0" text="PID" />
+                                              <TableColumn fx:id="col_stools_macroscopy" prefWidth="186.0" text="MACROSCOPY" />
+                                                <TableColumn fx:id="col_stools_microscopy" prefWidth="327.0" text="MICROSCOPY" />
+                                                <TableColumn fx:id="col_stools_ocult_blood" prefWidth="298.0" text="OCULT BLOOD" />
+                                                <TableColumn fx:id="col_stools_date" prefWidth="127.0" text="DATE" />
+                                            </columns>
+                                          </TableView>
+                                       </children>
+                                    </Pane>
+                                 </center>
+                                 <left>
+                                    <Pane prefHeight="544.0" prefWidth="327.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <VBox fx:id="parent_stools" alignment="CENTER_LEFT" layoutY="5.0" prefHeight="353.0" prefWidth="320.0" spacing="2.0">
+                                             <children>
+                                                <Label text="MACROSCOPY" textFill="#9a9a9a">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextArea fx:id="txt_MACROSCOPY" prefHeight="200.0" prefWidth="200.0" wrapText="true" />
+                                                <Label text="MICROSCOPY" textFill="#9a9a9a">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextArea fx:id="txt_MICROSCOPY" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" wrapText="true" />
+                                                <Label text="OCULT BLOOD" textFill="#9a9a9a">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextArea fx:id="txt_OCULT_BLOOD" layoutX="10.0" layoutY="122.0" prefHeight="200.0" prefWidth="200.0" wrapText="true" />
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </Pane>
+                                 </left>
+                                 <top>
+                                    <HBox alignment="CENTER_RIGHT" prefHeight="34.0" prefWidth="1353.0" spacing="5.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <Button mnemonicParsing="false" onAction="#save_stools" text="Save" />
+                                          <Button mnemonicParsing="false" onAction="#update_stools" text="Rework" />
+                                          <ComboBox fx:id="cbo_stools" onAction="#do_stool_mob_search" prefHeight="15.0" prefWidth="150.0" />
+                                          <TextField fx:id="txt_stools_srch" onKeyPressed="#do_spec_search" prefHeight="25.0" prefWidth="250.0" />
+                                          <Button mnemonicParsing="false" onAction="#stools_make_search" prefHeight="16.0" prefWidth="99.0" text="Search" />
+                                       </children>
+                                    </HBox>
+                                 </top>
+                              </BorderPane>
+                           </children></AnchorPane>
+                  </content>
+                </TitledPane>
+              </panes>
+            </Accordion>
+         </center>
+      </BorderPane>
+   </children>
+</VBox>

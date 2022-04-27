@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.13.0.final using JasperReports Library version 6.13.0-46ada4d1be8f3c5985fd0b6146f3ed44caed6f05  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="presc_only" pageWidth="300" pageHeight="300" columnWidth="300" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="3f294518-634a-4201-b0a1-000aa6125aa3">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="LivewellDatabase"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="prescription" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT livewell.presc_listing.drug_name,
+	livewell.presc_listing.home_presc_id
+FROM livewell.presc_listing
+	where presc_listing.home_presc_id =  $P{prescription} ]]>
+	</queryString>
+	<field name="drug_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="drug_name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="presc_listing"/>
+	</field>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="2" width="250" height="18" uuid="371783ed-8dcc-4e2b-908d-26bf3116529a"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{drug_name}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

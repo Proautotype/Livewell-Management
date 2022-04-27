@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTimePicker?>
+<?import com.jfoenix.controls.JFXToolbar?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="293.0" prefWidth="434.0" spacing="10.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.Consults.SetReviewController">
+   <children>
+      <Pane prefHeight="38.0" prefWidth="394.0" style="-fx-background-color: lightblue;">
+         <children>
+            <Label layoutX="111.0" layoutY="9.0" text="SET REVIEW APPOINTMENT" textFill="#8a8585">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+         </children></Pane>
+      <HBox alignment="CENTER_RIGHT">
+         <children>
+            <Label prefHeight="17.0" prefWidth="106.0" text="SELECT DATE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <JFXDatePicker fx:id="review_date_picker" prefHeight="28.0" prefWidth="340.0" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT">
+         <children>
+            <Label prefHeight="17.0" prefWidth="79.0" text="SELECT TIME">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <JFXTimePicker fx:id="review_timepicker" />
+         </children>
+      </HBox>
+      <JFXTextArea fx:id="review_txt_descrptor" prefHeight="121.0" prefWidth="394.0" promptText="Add a short note, this is optional" style="-fx-background-color: lightblue;" wrapText="true">
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding></JFXTextArea>
+      <JFXToolbar prefHeight="32.0" prefWidth="394.0">
+         <left>
+            <JFXButton onAction="#exit" text="CANCEL" BorderPane.alignment="CENTER" />
+         </left>
+         <right>
+            <JFXButton onAction="#setReview" prefHeight="25.0" prefWidth="51.0" text="OK" BorderPane.alignment="CENTER" />
+         </right>
+         <center>
+            <Label fx:id="lbl_notification" prefHeight="17.0" prefWidth="245.0" BorderPane.alignment="CENTER" />
+         </center>
+      </JFXToolbar>
+   </children>
+   <padding>
+      <Insets left="20.0" right="20.0" />
+   </padding>
+</VBox>

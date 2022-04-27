@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="491.0" prefWidth="674.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.Accountancy.Accountancy_dashController">
+   <left>
+      <VBox alignment="TOP_CENTER" prefHeight="491.0" prefWidth="121.0" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <JFXButton buttonType="RAISED" onAction="#load_patient_accounts" prefHeight="87.0" prefWidth="125.0" style="-fx-background-color: #2c264f;" text="PATIENT ACCOUNT" textFill="WHITE" />
+            <JFXButton buttonType="RAISED" layoutX="10.0" layoutY="10.0" onAction="#load_client_accounts" prefHeight="87.0" prefWidth="126.0" style="-fx-background-color: #2c264f;" text="CUSTOMERS ACCOUNT" textAlignment="CENTER" textFill="WHITE" wrapText="true" />
+            <JFXButton alignment="CENTER" buttonType="RAISED" layoutX="10.0" layoutY="97.0" onAction="#load_deptors_creditors" prefHeight="87.0" prefWidth="126.0" style="-fx-background-color: #2c264f;" text="DEPTORS  CREDITORS" textAlignment="CENTER" textFill="WHITE" wrapText="true" />
+            <JFXButton alignment="CENTER" buttonType="RAISED" onAction="#load_memberAcc" prefHeight="87.0" prefWidth="126.0" style="-fx-background-color: #2c264f;" text="MEMBER ACCCOUNTS" textAlignment="CENTER" textFill="WHITE" wrapText="true" />
+            <Pane prefHeight="160.0" prefWidth="121.0" />
+            <JFXButton buttonType="RAISED" onAction="#do_log_out" prefHeight="32.0" prefWidth="126.0" style="-fx-background-color: #2c264f;" text="Log out" textFill="#ebebeb">
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../png/close.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Circle fx:id="lbl_imageView" fill="#2c264f" layoutX="228.0" layoutY="163.0" radius="60.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="5.0" />
+            <Label fx:id="lbl_name" alignment="CENTER" layoutX="45.0" layoutY="309.0" prefHeight="19.0" prefWidth="365.0" text="Name" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></Label>
+            <Label fx:id="lbl_id" alignment="CENTER" layoutX="88.0" layoutY="283.0" prefHeight="19.0" prefWidth="276.0" text="ID" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></Label>
+            <JFXButton layoutX="172.0" layoutY="344.0" onAction="#change_password" style="-fx-border-color: linear-gradient(to left,white,#2c264f);" text="Change password">
+               <ripplerFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="#2c264f" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </ripplerFill>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+   </center>
+   <right>
+      <JFXListView fx:id="listView_incoming" editable="true" prefHeight="491.0" prefWidth="98.0" style="-fx-background-color: Transparent;" BorderPane.alignment="CENTER" />
+   </right>
+</BorderPane>

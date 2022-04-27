@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.13.0.final using JasperReports Library version 6.13.0-46ada4d1be8f3c5985fd0b6146f3ed44caed6f05  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="LAB_KFT" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1305c7f6-474a-4a0c-b8e8-f4340e117c27">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="mySql my"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT * from lab_kft 
+inner join patient_info on lab_kft.pid = patient_info.registration_no 
+where lab_kft.pid = '000000' and lab_kft.on_date = '12 July, 2020']]>
+	</queryString>
+	<field name="pid" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="pid"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lab_kft"/>
+	</field>
+	<field name="sodium" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="sodium"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lab_kft"/>
+	</field>
+	<field name="chloride" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="chloride"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lab_kft"/>
+	</field>
+	<field name="total_co2" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="total_co2"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lab_kft"/>
+	</field>
+	<field name="urea" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="urea"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lab_kft"/>
+	</field>
+	<field name="creatinine" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="creatinine"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lab_kft"/>
+	</field>
+	<field name="egfr" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="egfr"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lab_kft"/>
+	</field>
+	<field name="on_date" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="on_date"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lab_kft"/>
+	</field>
+	<field name="record_time" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.label" value="record_time"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lab_kft"/>
+	</field>
+	<field name="potassium" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="potassium"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lab_kft"/>
+	</field>
+	<field name="Registration_NO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="Registration_NO"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="patient_info"/>
+	</field>
+	<field name="Facility_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="Facility_name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="patient_info"/>
+	</field>
+	<field name="DOR_firsAtt" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="DOR_firsAtt"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="patient_info"/>
+	</field>
+	<field name="surname" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="surname"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="patient_info"/>
+	</field>
+	<field name="other_names" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="other_names"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="patient_info"/>
+	</field>
+	<field name="_DOB" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.label" value="_DOB"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="patient_info"/>
+	</field>
+	<field name="_AGE" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="_AGE"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="patient_info"/>
+	</field>
+	<field name="SEX" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="SEX"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="patient_info"/>
+	</field>
+	<field name="Marital_Status" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="Marital_Status"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="patient_info"/>
+	</field>
+	<field name="occupation" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="occupation"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="patient_info"/>
+	</field>
+	<field name="religion" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="religion"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="patient_info"/>
+	</field>
+	<field name="Postal_address" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="Postal_address"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="patient_info"/>
+	</field>
+	<field name="Home_address" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="Home_address"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="patient_info"/>
+	</field>
+	<field name="Telephone" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="Telephone"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="patient_info"/>
+	</field>
+	<field name="email" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="email"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="patient_info"/>
+	</field>
+	<field name="nearest_relative" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="nearest_relative"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="patient_info"/>
+	</field>
+	<field name="contact_nearest_relative" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="contact_nearest_relative"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="patient_info"/>
+	</field>
+	<field name="District" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="District"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="patient_info"/>
+	</field>
+	<field name="locality" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="locality"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="patient_info"/>
+	</field>
+	<field name="Name_HIS" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="Name_HIS"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="patient_info"/>
+	</field>
+	<field name="health_Insu_no" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="health_Insu_no"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="patient_info"/>
+	</field>
+	<field name="health_insu_id" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="health_insu_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="patient_info"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="71" splitType="Stretch">
+			<rectangle>
+				<reportElement x="-20" y="-20" width="595" height="91" backcolor="#35E9F2" uuid="36bc2c8f-b9ec-4f6f-b370-150faa600136"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="120" y="14" width="325" height="30" uuid="0e71afcd-4213-4b94-afe1-67d081ae1ec5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LIVEWELL LABORATORY RESULTS]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="36" splitType="Stretch">
+			<rectangle>
+				<reportElement x="-20" y="0" width="595" height="36" forecolor="#080808" backcolor="#0FFFAF" uuid="856ee179-db5f-4e40-af4c-22135135b133"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="147" y="3" width="260" height="30" uuid="9a090426-d621-45d5-bf3e-0287c79ea17b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[KIDNEY FUNCTION TEST REPORT]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="68" splitType="Stretch">
+			<staticText>
+				<reportElement x="1" y="13" width="30" height="20" uuid="9de449fe-5154-4708-af11-fc56e406c1cf">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c85c0090-043c-4153-b786-f65c75608d48"/>
+				</reportElement>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PID:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="31" y="13" width="50" height="20" uuid="f3860948-237a-4219-af29-e8e478b94c1f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c85c0090-043c-4153-b786-f65c75608d48"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Registration_NO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="44" width="99" height="20" uuid="dac1ca24-dac5-43f2-b66d-c4b6d36f8265">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1bade0cd-7fd7-40f4-9ec2-64865c28a466"/>
+				</reportElement>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PATIENT NAME:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="100" y="43" width="113" height="21" uuid="185b964d-48b1-4920-a0f3-15e514a345eb">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1bade0cd-7fd7-40f4-9ec2-64865c28a466"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{surname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="220" y="43" width="150" height="20" uuid="adbf94fd-8e8a-4c17-9dc5-17d46734d715">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c5b9414d-5ffa-4c64-98ec-c47289e0d924"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{other_names}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="89" y="13" width="35" height="20" uuid="5b77f116-f0b7-4de3-87e2-05dfd2c575e9">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3e72be3a-5f85-46bf-858d-dbefeb6e7dbb"/>
+				</reportElement>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[AGE:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="124" y="13" width="36" height="20" uuid="a40b8721-4162-4ba2-899b-d5f3e8093b7b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3e72be3a-5f85-46bf-858d-dbefeb6e7dbb"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{_AGE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="160" y="14" width="37" height="20" uuid="33ec2853-86ce-47ab-beab-922ed1026f62">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="59e61227-1354-4d7e-8818-ebf240df7b12"/>
+				</reportElement>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SEX:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="202" y="13" width="65" height="21" uuid="ea2dfe9a-7797-4a14-8711-ec5b159d4924">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="59e61227-1354-4d7e-8818-ebf240df7b12"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{SEX}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="1" y="35" width="379" height="1" uuid="7e09d477-193a-460c-88ad-b81a6a8b5ab3"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="253" splitType="Stretch">
+			<line>
+				<reportElement x="1" y="1" width="549" height="1" uuid="63eaef03-5ff9-4a6f-992d-7b4c68cd1b73"/>
+			</line>
+			<textField>
+				<reportElement x="70" y="69" width="50" height="18" uuid="a4baf5ff-3208-45e7-96ba-b0678cfa7d9c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4083dd33-5a4e-41a1-a5c3-7d1661612c62"/>
+				</reportElement>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sodium}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="69" width="60" height="18" uuid="b49a6108-6bb4-4833-a2a6-5cce777f4c88">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4083dd33-5a4e-41a1-a5c3-7d1661612c62"/>
+				</reportElement>
+				<text><![CDATA[SODIUM]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="70" y="109" width="50" height="20" uuid="acdbd458-e7b6-49f3-b400-7398bfb0cda4">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="369ab99e-36ad-4c71-8fb3-f85550df12ce"/>
+				</reportElement>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{chloride}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="111" width="60" height="18" uuid="20af90cc-7ffb-4f79-85d3-eb724d0580bc">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="369ab99e-36ad-4c71-8fb3-f85550df12ce"/>
+				</reportElement>
+				<text><![CDATA[CHLORIDE]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="70" y="153" width="50" height="18" uuid="ddea636c-16ab-498f-a5dc-5faf77104f1a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2fbc68bf-8c68-4074-9f6d-98a64d352bf7"/>
+				</reportElement>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{total_co2}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="153" width="60" height="18" uuid="f25a2a37-13ee-4615-9358-3c1137c963bd">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2fbc68bf-8c68-4074-9f6d-98a64d352bf7"/>
+				</reportElement>
+				<text><![CDATA[TOTAL Co2]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="70" y="197" width="50" height="18" uuid="8a9a4ca0-cc58-4ca9-86a3-c9af63a0bedf">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7e50f9fe-2eb8-4d7e-98e8-53cb48c7d308"/>
+				</reportElement>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{urea}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="199" width="59" height="16" uuid="922429e4-5e35-4a44-911c-4df09c1768a3">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7e50f9fe-2eb8-4d7e-98e8-53cb48c7d308"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[UREA]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="360" y="69" width="60" height="18" uuid="764179b6-a408-4db3-aa9d-dc3c6f5dd1d4">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5a097494-95ba-40ac-917f-589300fc9ff5"/>
+				</reportElement>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{creatinine}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="280" y="69" width="70" height="18" uuid="842dce0d-4f92-45a1-b5a0-7167ccc57737">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5a097494-95ba-40ac-917f-589300fc9ff5"/>
+				</reportElement>
+				<text><![CDATA[CREATININE]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="360" y="111" width="60" height="18" uuid="b6afb6ad-022b-4ed6-9f32-4a774edf749d">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e5da3ef9-7c12-41b2-b355-58fc31543a60"/>
+				</reportElement>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{egfr}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="280" y="111" width="70" height="18" uuid="16c90414-f6e5-443b-8591-aa6fae8d8ccd">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e5da3ef9-7c12-41b2-b355-58fc31543a60"/>
+				</reportElement>
+				<text><![CDATA[EGFR]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="360" y="152" width="60" height="18" uuid="54234684-4ba2-44e1-a56a-3c3e67a1677c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a4492d5a-129e-4aca-becd-319077b3e428"/>
+				</reportElement>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{potassium}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="280" y="152" width="70" height="18" uuid="44624538-0d9c-4617-9a08-22b9189ee175">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a4492d5a-129e-4aca-becd-319077b3e428"/>
+				</reportElement>
+				<text><![CDATA[POTASSIUM]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="450" y="10" width="100" height="14" uuid="d11b39b9-412c-43d7-a39f-7ab221353aa3">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4a798de3-1ced-453c-a6a4-ba132cb71480"/>
+				</reportElement>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{on_date}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="406" y="10" width="37" height="14" uuid="a274a616-4408-46c1-81a5-1cfa0bba237e">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4a798de3-1ced-453c-a6a4-ba132cb71480"/>
+				</reportElement>
+				<text><![CDATA[DATE]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

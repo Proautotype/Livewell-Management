@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXProgressBar?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import org.controlsfx.control.MaskerPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="626.0" prefWidth="447.0" style="-fx-background-color: linear-gradient(to left,lightblue,lightgreen);" styleClass="main" stylesheets="@test_welcome_style_sheet.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.signIn.SignInController">
+   <children>
+      <Pane prefHeight="720.0" prefWidth="468.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Pane layoutX="-2.0" layoutY="147.0" prefHeight="280.0" prefWidth="447.0">
+               <children>
+                  <JFXTextField fx:id="txt_username" alignment="CENTER" layoutX="89.0" layoutY="72.0" prefHeight="43.0" prefWidth="290.0" promptText="Enter ID" style="-fx-text-fill: #4d4d4d;">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXPasswordField fx:id="txt_password" alignment="CENTER" layoutX="89.0" layoutY="174.0" onAction="#signIn" prefHeight="43.0" prefWidth="290.0" promptText="Enter password" style="-fx-text-fill: #4d4d4d;">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </JFXPasswordField>
+                  <ImageView layoutX="218.0" layoutY="41.0">
+                     <image>
+                        <Image url="@../../png/userHead.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView layoutX="220.0" layoutY="149.0">
+                     <image>
+                        <Image url="@../../png/password.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <VBox alignment="TOP_CENTER" layoutX="154.0" layoutY="525.0" prefHeight="55.0" prefWidth="143.0" spacing="15.0">
+               <children>
+                  <JFXButton buttonType="RAISED" onAction="#recoverCredentials" prefHeight="39.0" prefWidth="172.0" style="-fx-border-color: linear-gradient( white,white ,lightblue);" styleClass="JFXButton" text="RECOVER PASSWORD" textFill="WHITE" visible="false">
+                     <ripplerFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="#0eadbc" />
+                              <Stop color="#0eadbc" offset="0.007662835249042145" />
+                              <Stop color="WHITE" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </ripplerFill>
+                  </JFXButton>
+               </children>
+            </VBox>
+            <Label alignment="CENTER" layoutX="17.0" layoutY="44.0" prefHeight="44.0" prefWidth="414.0" text="LIVEWELL HERBAL CLINIC" textFill="WHITE">
+               <font>
+                  <Font name="Cambria Bold" size="33.0" />
+               </font>
+            </Label>
+            <Label layoutX="132.0" layoutY="98.0" text="HOSPITAL MANAGEMENT SYSTEM" textFill="WHITE" textOverrun="WORD_ELLIPSIS" />
+            <JFXProgressBar fx:id="progress_signer" layoutX="5.0" layoutY="434.0" prefHeight="6.0" prefWidth="431.0" progress="0.0" />
+            <JFXButton alignment="CENTER" contentDisplay="CENTER" layoutX="415.0" layoutY="-5.0" onAction="#closeApplication" prefHeight="32.0" prefWidth="32.0" ripplerFill="RED" style="-fx-border-radius: 40px; -fx-background-radius: 40px;" text="x" textAlignment="CENTER" textFill="#fc3b3b">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </JFXButton>
+            <Label fx:id="lbl_notice" alignment="CENTER" layoutX="45.0" layoutY="584.0" prefHeight="32.0" prefWidth="389.0" text="Label" textAlignment="CENTER" visible="false" />
+            <JFXButton alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" layoutY="592.0" onAction="#openConnMgmt" prefHeight="32.0" prefWidth="32.0" ripplerFill="#f8f8f8" style="-fx-border-radius: 40px; -fx-background-radius: 40px;" text="?" textAlignment="CENTER" textFill="#4cffd8">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="135.0" layoutY="468.0" onAction="#signIn" prefHeight="39.0" prefWidth="184.0" style="-fx-border-color: linear-gradient( white,gray,lightblue);" styleClass="JFXButton" text="SIGN IN" textFill="WHITE">
+               <ripplerFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="#0eadbc" />
+                        <Stop color="#0eadbc" offset="0.007662835249042145" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </ripplerFill>
+            </JFXButton>
+         </children>
+      </Pane>
+      <MaskerPane fx:id="parentMasker" prefHeight="688.0" prefWidth="468.0" visible="false" />
+   </children>
+</AnchorPane>

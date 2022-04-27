@@ -1,0 +1,21 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+
+}
+
+.panes{
+    -fx-background-color: #c6eef0;    
+}
+
+.title{
+    -fx-background-color: #c6eef0; 
+        
+}
+
+.notificationArea{
+    -fx-background-color: #c6eef0;    
+    -fx-background-color: #fffcb4;    
+}

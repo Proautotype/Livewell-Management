@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXDrawer?>
+<?import com.jfoenix.controls.JFXHamburger?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import org.controlsfx.control.MaskerPane?>
+
+<StackPane minWidth="400.0" prefHeight="750.0" prefWidth="1366.0" stylesheets="@Administrator_style_sheet.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.Administrator.Administrator_Controller">
+   <children>
+      <JFXTabPane tabDragPolicy="REORDER">
+         <tabs>
+            <Tab text="USER MANAGEMENT">
+               <content>
+                  <JFXTabPane fx:id="user_mgmt_tabpane" side="BOTTOM" style="-fx-background-color: DARKGRAY;">
+                     <tabs>
+                        <Tab fx:id="tab_user_mgmt_create_user" text="CREATE USER">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <HBox layoutX="280.0" layoutY="1.0" prefHeight="609.0" prefWidth="807.0">
+                                       <children>
+                                          <Pane prefHeight="347.0" prefWidth="1200.0" styleClass="createUserPane">
+                                             <children>
+                                                <GridPane layoutX="35.0" layoutY="44.0" prefHeight="217.0" prefWidth="380.0">
+                                                  <columnConstraints>
+                                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="137.0" minWidth="10.0" prefWidth="126.0" />
+                                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="277.0" minWidth="10.0" prefWidth="254.0" />
+                                                  </columnConstraints>
+                                                  <rowConstraints>
+                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                  </rowConstraints>
+                                                   <children>
+                                                      <Label text="First name" />
+                                                      <Label text="Second name" GridPane.rowIndex="1" />
+                                                      <Label prefHeight="17.0" prefWidth="96.0" text="Date of birth" GridPane.rowIndex="2" />
+                                                      <Label prefHeight="17.0" prefWidth="96.0" text="Sex" GridPane.rowIndex="3" />
+                                                      <Label prefHeight="17.0" prefWidth="101.0" text="Age" GridPane.rowIndex="4" />
+                                                      <TextField fx:id="txt_fname" prefHeight="35.0" prefWidth="268.0" GridPane.columnIndex="1" />
+                                                      <TextField fx:id="txt_sname" prefHeight="35.0" prefWidth="245.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                      <JFXDatePicker fx:id="date_dob" defaultColor="#32affa" onAction="#date_dob_set_age" prefHeight="35.0" prefWidth="277.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                      <JFXComboBox fx:id="cbo_sex" prefHeight="36.0" prefWidth="269.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                      <TextField fx:id="txt_age" editable="false" prefHeight="34.0" prefWidth="245.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                                   </children>
+                                                </GridPane>
+                                                <GridPane alignment="CENTER" layoutX="35.0" layoutY="275.0" prefHeight="280.0" prefWidth="381.0">
+                                                   <columnConstraints>
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="128.0" minWidth="7.0" prefWidth="128.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="279.0" minWidth="10.0" prefWidth="253.0" />
+                                                   </columnConstraints>
+                                                   <rowConstraints>
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                   </rowConstraints>
+                                                   <children>
+                                                      <Label text="Contact" />
+                                                      <Label text="Email" GridPane.rowIndex="1" />
+                                                      <Label prefHeight="17.0" prefWidth="96.0" text="Hometown" GridPane.rowIndex="2" />
+                                                      <Label prefHeight="17.0" prefWidth="96.0" text="Residence" GridPane.rowIndex="3" />
+                                                      <Label prefHeight="17.0" prefWidth="101.0" text="House No." GridPane.rowIndex="4" />
+                                                      <TextField fx:id="txt_contact" prefHeight="38.0" prefWidth="270.0" GridPane.columnIndex="1" />
+                                                      <TextField fx:id="txt_email" prefHeight="38.0" prefWidth="270.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                      <TextField fx:id="txt_hometown" prefHeight="42.0" prefWidth="270.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                      <TextField fx:id="txt_residence" layoutX="90.0" layoutY="97.0" prefHeight="41.0" prefWidth="270.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                      <TextField fx:id="txt_house_no" prefHeight="39.0" prefWidth="270.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                                      <ComboBox fx:id="cbo_level_education" editable="true" prefHeight="39.0" prefWidth="305.0" promptText="Level of education" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                                      <Label text="LEVEL OF EDUCATION" GridPane.rowIndex="5" />
+                                                   </children>
+                                                </GridPane>
+                                                <Label fx:id="lbl_userId" layoutX="10.0" layoutY="4.0" prefHeight="20.0" prefWidth="138.0" text="USER:" textAlignment="CENTER" textFill="#9e9e9e">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Pane layoutX="483.0" layoutY="40.0" prefHeight="237.0" prefWidth="221.0" style="-fx-border-color: gray; -fx-background-radius: 15px; -fx-border-radius: 15px;">
+                                                   <children>
+                                                      <Label layoutX="35.0" layoutY="80.0" prefHeight="66.0" prefWidth="145.0" text="USER IMAGE HERE" textAlignment="CENTER" textFill="#aeaeae" wrapText="true">
+                                                         <font>
+                                                            <Font name="System Bold" size="18.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <ImageView fx:id="imgView_userImage" fitHeight="214.0" fitWidth="211.0" layoutX="5.0" layoutY="10.0" onDragDropped="#imgView_userImage_drag_dropped" onDragOver="#imgView_userImage_drag_over" pickOnBounds="true" />
+                                                      <JFXButton buttonType="RAISED" layoutX="3.0" layoutY="3.0" onAction="#add_userImage" prefHeight="20.0" prefWidth="26.0" style="-fx-background-color: linear-gradient(lightgreen,lightblue); -fx-border-radius: 20px; -fx-background-radius: 20px;" text="+" textAlignment="CENTER" textFill="#aeaeae">
+                                                         <font>
+                                                            <Font name="System Bold" size="12.0" />
+                                                         </font>
+                                                      </JFXButton>
+                                                   </children>
+                                                </Pane>
+                                                <Pane layoutX="481.0" layoutY="305.0" prefHeight="237.0" prefWidth="221.0" style="-fx-bORDER-color: DARKGRAY; -fx-background-radius: 15px; -fx-border-radius: 15px;">
+                                                   <children>
+                                                      <Label layoutX="37.0" layoutY="89.0" prefHeight="60.0" prefWidth="147.0" text="CERTIFICATE IMAGE HERE" textAlignment="CENTER" textFill="#9e9e9e" wrapText="true">
+                                                         <font>
+                                                            <Font name="System Bold" size="18.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <ImageView fx:id="imgView_certificat" fitHeight="211.0" fitWidth="207.0" layoutX="7.0" layoutY="11.0" onDragDropped="#imgView_certificate_drag_dropped" onDragOver="#imgView_userImage_drag_over" pickOnBounds="true" />
+                                                     
+                                                                  <JFXButton buttonType="RAISED" layoutX="3.0" layoutY="2.0" onAction="#add_cert_image" prefHeight="23.0" prefWidth="26.0" style="-fx-background-color: linear-gradient(lightgreen,lightblue); -fx-background-radius: 20px; -fx-border-radius: 20px;" text="+" textAlignment="CENTER" textFill="#aeaeae">
+                                                         <font>
+                                                            <Font name="System Bold" size="12.0" />
+                                                         </font>
+                                                      </JFXButton>
+                                                   </children>
+                                                </Pane>
+                                                <JFXButton fx:id="btn_user_actions" buttonType="RAISED" layoutX="750.0" layoutY="560.0" onAction="#add_user_details" prefHeight="41.0" prefWidth="34.0" style="-fx-border-color: #1bb7bf; -fx-background-radius: 50px; -fx-border-radius: 50px;" text="S" textAlignment="CENTER" textFill="#1bb7bf">
+                                                   <font>
+                                                      <Font name="System Bold" size="18.0" />
+                                                   </font>
+                                                   <ripplerFill>
+                                                      <LinearGradient endX="1.0" endY="1.0">
+                                                         <stops>
+                                                            <Stop color="#1bb7bf" />
+                                                            <Stop color="WHITE" offset="1.0" />
+                                                         </stops>
+                                                      </LinearGradient>
+                                                   </ripplerFill>
+                                                </JFXButton>
+                                             </children>
+                                          </Pane>
+                                       </children>
+                                    </HBox>
+                                    <MaskerPane fx:id="createUserMasker" prefHeight="608.0" prefWidth="1366.0" visible="false" />
+                                    <VBox alignment="CENTER" layoutX="14.0" layoutY="14.0" prefHeight="125.0" prefWidth="78.0" spacing="5.0">
+                                       <children>
+                                          <JFXButton fx:id="btn_new" onAction="#do_new_user" prefHeight="55.0" prefWidth="55.0" style="-fx-border-color: white; -fx-border-radius: 50px; -fx-background-radius: 50px; -fx-text-fill: white;" text="New" />
+                                          <JFXButton fx:id="btn_clear" layoutX="22.0" layoutY="10.0" onAction="#do_clear_user" prefHeight="55.0" prefWidth="55.0" style="-fx-border-color: white; -fx-border-radius: 50px; -fx-background-radius: 50px; -fx-text-fill: white;" text="Clear" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </Tab>
+                        <Tab text="VIEW USERS">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <BorderPane layoutX="83.0" layoutY="50.0" prefHeight="610.0" prefWidth="1366.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <center>
+                                          <AnchorPane prefHeight="544.0" prefWidth="1271.0" BorderPane.alignment="CENTER">
+                                             <children>
+                                                <TableView fx:id="table_user_details" editable="true" layoutX="10.0" layoutY="14.0" prefHeight="507.0" prefWidth="1252.0" style="-fx-fixed-cell-size: 35; -fx-background-color: darkgray;">
+                                                  <columns>
+                                                    <TableColumn fx:id="col_customId" prefWidth="89.0" text="Custom ID" />
+                                                    <TableColumn fx:id="col_fname" prefWidth="137.0" text="First Name" />
+                                                      <TableColumn fx:id="col_sname" prefWidth="129.0" text="Second Name" />
+                                                      <TableColumn fx:id="col_dob" prefWidth="87.0" text="DOB" />
+                                                      <TableColumn fx:id="col_sex" prefWidth="75.0" text="Sex" />
+                                                      <TableColumn fx:id="col_contact" prefWidth="92.0" text="Contact" />
+                                                      <TableColumn fx:id="col_email" prefWidth="187.0" text="Email" />
+                                                      <TableColumn fx:id="col_loe" prefWidth="382.0" text="Level Of Education" />
+                                                  </columns>
+                                                </TableView>
+                                             </children>
+                                          </AnchorPane>
+                                       </center>
+                                       <right>
+                                          <VBox prefHeight="570.0" prefWidth="95.0" spacing="10.0" BorderPane.alignment="CENTER">
+                                             <children>
+                                                <JFXButton onAction="#userMgmt_ViewUser_ViewInDetail" prefHeight="83.0" prefWidth="97.0" style="-fx-background-color: lightBlue;" text="View In Detail" />
+                                                <JFXButton layoutX="10.0" layoutY="10.0" prefHeight="83.0" prefWidth="97.0" style="-fx-background-color: lightBlue;" text="Delete" />
+                                                <JFXButton layoutX="10.0" layoutY="103.0" onAction="#send_sms" prefHeight="83.0" prefWidth="97.0" style="-fx-background-color: lightBlue;" text="SMS" />
+                                             </children>
+                                          </VBox>
+                                       </right>
+                                       <top>
+                                          <Pane prefHeight="40.0" prefWidth="1366.0" BorderPane.alignment="CENTER">
+                                             <children>
+                                                <JFXComboBox fx:id="cbo_viewUser_view_order" editable="true" layoutX="18.0" layoutY="3.0" onAction="#do_view_order" prefHeight="32.0" prefWidth="389.0" promptText="Type or Click the arrow to View" />
+                                             </children></Pane>
+                                       </top>
+                                    </BorderPane>
+                                 </children></AnchorPane>
+                           </content>
+                        </Tab>
+                     </tabs>
+                  </JFXTabPane>
+               </content>
+            </Tab>
+            <Tab text="DEPARTMENT MANAGEMNT">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: DARKGRAY;" />
+               </content>
+               <content>
+                  <JFXTabPane side="BOTTOM">
+                     <tabs>
+                        <Tab text="RECORDS">
+                          <content>
+                              <BorderPane fx:id="deptMgmt_BorderPane">
+                                 <left>
+                                    <Pane prefHeight="610.0" prefWidth="245.0" style="-fx-background-color: lightblue;" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <JFXListView fx:id="dept_userListView" depth="5" layoutX="7.0" layoutY="47.0" onMouseClicked="#dept_userListView_mouse_Clicked" prefHeight="562.0" prefWidth="233.0" style="-fx-background-color: Transparent;" verticalGap="7.0">
+                                             <contextMenu>
+                                                <ContextMenu>
+                                                  <items>
+                                                    <MenuItem mnemonicParsing="false" onAction="#do_delete_from_dept" text="Delete from department" />
+                                                  </items>
+                                                </ContextMenu>
+                                             </contextMenu></JFXListView>
+                                          <JFXComboBox editable="true" labelFloat="true" layoutX="7.0" layoutY="11.0" prefHeight="28.0" prefWidth="235.0" promptText="Users" unFocusColor="WHITE" />
+                                       </children>
+                                    </Pane>
+                                 </left>
+                                 <right>
+                                    <Pane prefHeight="610.0" prefWidth="326.0" style="-fx-background-color: lightblue;" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <Label alignment="CENTER" layoutX="66.0" layoutY="50.0" prefHeight="30.0" prefWidth="195.0" text="ABOUT" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                                             <font>
+                                                <Font name="System Bold" size="17.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="10.0" layoutY="86.0" prefHeight="21.0" prefWidth="92.0" text="Description">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="lbl_dept_abt" alignment="TOP_LEFT" layoutX="10.0" layoutY="111.0" prefHeight="142.0" prefWidth="306.0" text="Pseuducodedeclare / initialize four int/decimal/float variablesdeclare a variable to hold result whose type is based on the chosen number typeUse the + arithmatic operator to add the values in the variablesput results in the result variableprint result;" wrapText="true">
+                                             <padding>
+                                                <Insets bottom="5.0" left="10.0" right="5.0" top="5.0" />
+                                             </padding>
+                                             <font>
+                                                <Font name="System Italic" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="11.0" layoutY="271.0" text="HEAD OF DEPARTMENT ( HOD )">
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <HBox layoutX="18.0" layoutY="305.0" prefHeight="94.0" prefWidth="298.0" spacing="5.0">
+                                             <children>
+                                                <Pane prefHeight="100.0" prefWidth="105.0">
+                                                   <children>
+                                                      <Circle fx:id="deptMgmt_aboutImageClip" fill="WHITE" layoutX="47.0" layoutY="46.0" radius="45.0" stroke="BLACK" strokeType="INSIDE" />
+                                                      <ImageView fx:id="deptMgmt_aboutImage" fitHeight="93.0" fitWidth="95.0" layoutX="1.0" pickOnBounds="true" />
+                                                   </children>
+                                                </Pane>
+                                                <Pane layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="193.0">
+                                                   <children>
+                                                      <GridPane layoutX="-3.0" layoutY="5.0">
+                                                        <columnConstraints>
+                                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="82.0" />
+                                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="118.0" minWidth="10.0" prefWidth="118.0" />
+                                                        </columnConstraints>
+                                                        <rowConstraints>
+                                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                        </rowConstraints>
+                                                         <children>
+                                                            <Label text="Name" />
+                                                            <Label text="Contact" GridPane.rowIndex="1" />
+                                                            <Label text="Qualification" GridPane.rowIndex="2" />
+                                                         </children>
+                                                      </GridPane>
+                                                   </children>
+                                                </Pane>
+                                             </children>
+                                          </HBox>
+                                          <Label fx:id="lbl_department_name" alignment="CENTER" layoutX="4.0" layoutY="1.0" prefHeight="45.0" prefWidth="320.0" text="DEPARTMENT" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                                             <font>
+                                                <Font name="System Bold" size="24.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </Pane>
+                                 </right>
+                                 <center>
+                                    <BorderPane>
+                                       <bottom>
+                                          <AnchorPane prefHeight="610.0" prefWidth="795.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+                                             <children>
+                                                <JFXButton fx:id="deptMgmt_addUser_toThisDept" buttonType="RAISED" layoutX="744.0" layoutY="559.0" onAction="#add_user_to_dept" prefHeight="44.0" prefWidth="43.0" style="-fx-background-color: linear-gradient(lightgreen,lightblue); -fx-background-radius: 50px; -fx-border-radius: 50px;" text="+" textAlignment="CENTER">
+                                                   <font>
+                                                      <Font size="18.0" />
+                                                   </font>
+                                                </JFXButton>
+                                                <Line endX="605.0" layoutX="143.0" layoutY="157.0" startX="-100.0" />
+                                                <Circle fx:id="imageView_deptMgmt_profileImage_clip" fill="WHITE" layoutX="384.0" layoutY="163.0" radius="69.0" stroke="BLACK" strokeType="INSIDE" />
+                                                <ImageView fx:id="imageView_deptMgmt_profile" fitHeight="140.0" fitWidth="143.0" layoutX="312.0" layoutY="92.0" pickOnBounds="true" />
+                                                <GridPane gridLinesVisible="true" layoutX="211.0" layoutY="249.0" prefHeight="174.0" prefWidth="345.0">
+                                                  <columnConstraints>
+                                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="130.0" minWidth="10.0" prefWidth="91.0" />
+                                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="248.0" minWidth="10.0" prefWidth="248.0" />
+                                                  </columnConstraints>
+                                                  <rowConstraints>
+                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                  </rowConstraints>
+                                                   <children>
+                                                      <Label text="NAME">
+                                                         <GridPane.margin>
+                                                            <Insets />
+                                                         </GridPane.margin>
+                                                         <padding>
+                                                            <Insets left="5.0" />
+                                                         </padding>
+                                                      </Label>
+                                                      <Label text="DOB" GridPane.rowIndex="1">
+                                                         <GridPane.margin>
+                                                            <Insets right="10.0" />
+                                                         </GridPane.margin>
+                                                         <padding>
+                                                            <Insets left="5.0" />
+                                                         </padding>
+                                                      </Label>
+                                                      <Label text="AGE" GridPane.rowIndex="2">
+                                                         <GridPane.margin>
+                                                            <Insets right="10.0" />
+                                                         </GridPane.margin>
+                                                         <padding>
+                                                            <Insets left="5.0" />
+                                                         </padding>
+                                                      </Label>
+                                                      <Label text="EMAIL" GridPane.rowIndex="3">
+                                                         <GridPane.margin>
+                                                            <Insets right="10.0" />
+                                                         </GridPane.margin>
+                                                         <padding>
+                                                            <Insets left="5.0" />
+                                                         </padding>
+                                                      </Label>
+                                                      <Label text="CONTACT" GridPane.rowIndex="4">
+                                                         <GridPane.margin>
+                                                            <Insets right="10.0" />
+                                                         </GridPane.margin>
+                                                         <padding>
+                                                            <Insets left="5.0" />
+                                                         </padding>
+                                                      </Label>
+                                                      <Label fx:id="deptMgmt_lbl_userName" GridPane.columnIndex="1">
+                                                         <GridPane.margin>
+                                                            <Insets left="5.0" right="5.0" />
+                                                         </GridPane.margin>
+                                                      </Label>
+                                                      <Label fx:id="deptMgmt_lbl_DOB" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                         <GridPane.margin>
+                                                            <Insets left="5.0" right="5.0" />
+                                                         </GridPane.margin>
+                                                      </Label>
+                                                      <Label fx:id="deptMgmt_lbl_age" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                         <GridPane.margin>
+                                                            <Insets left="5.0" right="5.0" />
+                                                         </GridPane.margin>
+                                                      </Label>
+                                                      <Label fx:id="deptMgmt_lbl_email" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                                         <GridPane.margin>
+                                                            <Insets left="5.0" right="5.0" />
+                                                         </GridPane.margin>
+                                                      </Label>
+                                                      <Label fx:id="deptMgmt_lbl_contact" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                                         <GridPane.margin>
+                                                            <Insets left="5.0" right="5.0" />
+                                                         </GridPane.margin>
+                                                      </Label>
+                                                   </children>
+                                                </GridPane>
+                                                <TextField layoutX="14.0" layoutY="48.0" visible="false">
+                                                   <contextMenu>
+                                                      <ContextMenu>
+                                                         <items>
+                                                            <MenuItem fx:id="deptMgmt_Overall_Menu" mnemonicParsing="false" onAction="#show_controls" text="Show controls">
+                                                               <accelerator>
+                                                                  <KeyCodeCombination alt="UP" code="F" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                                                               </accelerator>
+                                                            </MenuItem>
+                                                         </items>
+                                                      </ContextMenu>
+                                                   </contextMenu>
+                                                </TextField>
+                                                <JFXDrawer fx:id="deptMgmt_Drawer" direction="TOP" layoutX="24.0" layoutY="19.0" prefHeight="59.0" prefWidth="744.0" />
+                                                <JFXHamburger fx:id="deptMgmt_humberger" alignment="CENTER" layoutX="2.0" layoutY="4.0" prefHeight="20.0" prefWidth="22.0" style="-fx-background-color: white;" />
+                                                <HBox alignment="CENTER" layoutX="103.0" layoutY="550.0" prefHeight="52.0" prefWidth="594.0" visible="false">
+                                                   <children>
+                                                      <JFXDrawer fx:id="deptMgmt_down_drawer" direction="BOTTOM" prefHeight="60.0" prefWidth="585.0" style="-fx-background-color: silver;" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </AnchorPane>
+                                       </bottom>
+                                    </BorderPane>
+                                 </center>
+                              </BorderPane>
+                          </content>
+                        </Tab>
+                     </tabs></JFXTabPane>
+               </content>
+            </Tab>
+            <Tab text="STATISTICS">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: DARKGRAY;" />
+               </content>
+            </Tab>
+            <Tab text="SETTINGS">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: DARKGRAY;" />
+               </content>
+            </Tab>
+         </tabs>
+      </JFXTabPane>
+      <MaskerPane fx:id="parent_masker" visible="false" />
+   </children>
+</StackPane>

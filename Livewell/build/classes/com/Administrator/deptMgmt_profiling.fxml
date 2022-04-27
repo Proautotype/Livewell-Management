@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<HBox alignment="CENTER_RIGHT" prefHeight="59.0" prefWidth="787.0" spacing="10.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.Administrator.DeptMgmt_profilingController">
+   <padding>
+      <Insets left="10.0" right="10.0" />
+   </padding>
+   <children>
+      <JFXCheckBox text="Auto" />
+      <Pane prefHeight="44.0" prefWidth="693.0">
+         <children>
+            <JFXComboBox labelFloat="true" layoutX="24.0" layoutY="19.0" prefHeight="25.0" prefWidth="182.0" promptText="change department" />
+            <JFXButton buttonType="RAISED" layoutX="216.0" layoutY="19.0" prefHeight="25.0" prefWidth="73.0" style="-fx-background-color: linear-gradient(lightgreen,lightblue);" text="Run" />
+            <JFXTextField fx:id="deptMgmt_profile_txt_srch_anyUser" alignment="CENTER" layoutX="414.0" layoutY="16.0" onKeyTyped="#deptMgmt_profile_search" prefHeight="30.0" prefWidth="221.0" promptText="Search any user here">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXTextField>
+            <JFXButton layoutX="639.0" layoutY="19.0" onAction="#deptMgmt_open_userProfile" prefHeight="31.0" prefWidth="52.0" text="Search" />
+         </children>
+      </Pane>
+   </children>
+</HBox>

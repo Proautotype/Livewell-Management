@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="776.0" prefWidth="535.0" style="-fx-background-color: #4FC3F7;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.Accountancy.PaymentController">
+    <stylesheets>
+        <URL value="@payment.css" />
+    </stylesheets>
+   <children>
+      <HBox layoutX="6.0" layoutY="51.0" prefHeight="716.0" prefWidth="443.0" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="51.0">
+         <children>
+            <Pane prefHeight="716.0" prefWidth="519.0" style="-fx-background-color: #B3E5FC;">
+               <children>
+                  <TableView fx:id="table_payment" layoutX="5.0" layoutY="337.0" prefHeight="366.0" prefWidth="507.0" style="-fx-background-color: TRANSPARENT;">
+                    <columns>
+                      <TableColumn fx:id="col_pDate" prefWidth="101.0" text="PAY DATE" />
+                        <TableColumn fx:id="col_mop" prefWidth="95.0" text="MOP" />
+                      <TableColumn fx:id="col_deficit" prefWidth="94.0" text="DEFICIT" />
+                        <TableColumn fx:id="col_payment" prefWidth="116.0" text="PAYMENT" />
+                        <TableColumn fx:id="col_balance" prefWidth="87.0" text="BALANCE" />
+                    </columns>
+                  </TableView>
+                  <GridPane gridLinesVisible="true" layoutX="81.0" layoutY="53.0" prefHeight="95.0" prefWidth="365.0" style="-fx-background-color: #4FC3F7;">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="152.0" minWidth="10.0" prefWidth="144.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="301.0" minWidth="10.0" prefWidth="262.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="ID">
+                           <padding>
+                              <Insets left="5.0" />
+                           </padding>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label text="Name" GridPane.rowIndex="1">
+                           <padding>
+                              <Insets left="5.0" />
+                           </padding>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label text="Contact" GridPane.rowIndex="2">
+                           <padding>
+                              <Insets left="5.0" />
+                           </padding>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lbl_id" prefHeight="26.0" prefWidth="300.0" GridPane.columnIndex="1">
+                           <GridPane.margin>
+                              <Insets left="5.0" />
+                           </GridPane.margin></Label>
+                        <Label fx:id="lbl_name" prefHeight="30.0" prefWidth="301.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="5.0" />
+                           </GridPane.margin></Label>
+                        <Label fx:id="lbl_contact" prefHeight="27.0" prefWidth="290.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="5.0" />
+                           </GridPane.margin></Label>
+                     </children>
+                  </GridPane>
+                  <TextField fx:id="txt_srch_client" layoutX="61.0" layoutY="14.0" prefHeight="25.0" prefWidth="406.0" promptText="Search Client " />
+                  <GridPane gridLinesVisible="true" layoutX="82.0" layoutY="158.0" prefHeight="168.0" prefWidth="365.0" style="-fx-background-color: #4FC3F7;">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="215.0" minWidth="10.0" prefWidth="133.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="328.0" minWidth="10.0" prefWidth="208.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="31.0" minHeight="10.0" prefHeight="29.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="42.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="48.0" minHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="45.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <ComboBox fx:id="cbo_pm" prefHeight="25.0" prefWidth="243.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Button mnemonicParsing="false" onAction="#do_payment" prefHeight="25.0" prefWidth="315.0" text="Make Payment" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <TextField fx:id="txt_deficit" editable="false" prefHeight="25.0" prefWidth="247.0" GridPane.columnIndex="1" />
+                        <Label text="DEFICIT">
+                           <padding>
+                              <Insets left="2.0" />
+                           </padding>
+                           <GridPane.margin>
+                              <Insets left="5.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label text="PAYMENT METHOD" GridPane.rowIndex="1">
+                           <padding>
+                              <Insets left="2.0" />
+                           </padding>
+                           <GridPane.margin>
+                              <Insets left="5.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label text="PAYMENT" GridPane.rowIndex="2">
+                           <padding>
+                              <Insets left="2.0" />
+                           </padding>
+                           <GridPane.margin>
+                              <Insets left="5.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <TextField fx:id="txt_payment" prefHeight="25.0" prefWidth="232.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <JFXDatePicker fx:id="date_payment" prefHeight="28.0" prefWidth="256.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label text="SEKECT PAYMENT DATE" GridPane.rowIndex="3">
+                           <padding>
+                              <Insets left="2.0" />
+                           </padding>
+                           <GridPane.margin>
+                              <Insets left="5.0" />
+                           </GridPane.margin>
+                        </Label>
+                     </children>
+                  </GridPane>
+               </children></Pane>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.web.HTMLEditor?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="586.0" prefWidth="519.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.Nurses.VlchController">
+   <children>
+      <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="64.0" prefWidth="519.0" style="-fx-background-color: DARKGRAY;">
+         <children>
+            <Label layoutX="41.0" layoutY="8.0" text="This is the previous complaint and history of patient " textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbl_id" layoutX="372.0" layoutY="10.0" prefHeight="17.0" prefWidth="123.0" text="LHC-TEST" textFill="WHITE" />
+            <Label fx:id="lbl_name" alignment="CENTER" layoutX="242.0" layoutY="31.0" prefHeight="20.0" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="37.0" prefWidth="519.0">
+         <children>
+            <Label layoutX="22.0" layoutY="4.0" text="COMPLAINT">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="279.0" prefWidth="519.0" style="-fx-background-color: #dbdbdb;">
+         <children>
+            <HTMLEditor fx:id="txt_complaint" htmlText="&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body contenteditable=&quot;true&quot;&gt;&lt;/body&gt;&lt;/html&gt;" layoutX="11.0" layoutY="7.0" prefHeight="252.0" prefWidth="497.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="34.0" prefWidth="519.0">
+         <children>
+            <Label layoutX="14.0" layoutY="3.0" text="HISTORY">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="10.0" layoutY="46.0" prefHeight="217.0" prefWidth="519.0" style="-fx-background-color: #dbdbdb;">
+         <children>
+            <TextArea fx:id="txt_history" layoutX="11.0" layoutY="7.0" prefHeight="187.0" prefWidth="497.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>

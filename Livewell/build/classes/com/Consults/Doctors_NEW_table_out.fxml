@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import org.controlsfx.control.MaskerPane?>
+
+<VBox prefHeight="743.0" prefWidth="1356.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.Consults.Doctors_NEWController">
+  <children>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+         <children>
+            <TitledPane layoutX="2.0" layoutY="9.0" prefHeight="433.0" prefWidth="108.0" text="IN-PATIENTS" textAlignment="CENTER">
+               <content>
+                  <JFXListView fx:id="list_incoming_Patients" onMouseClicked="#list_incoming_mouse_clicked" prefHeight="617.0" prefWidth="113.0" />
+               </content>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </TitledPane>
+            <JFXButton layoutX="14.0" layoutY="68.0" text="    ">
+               <contextMenu>
+                  <ContextMenu>
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#setFullScreen" text="Full Screen">
+                           <accelerator>
+                              <KeyCodeCombination alt="UP" code="F" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator>
+                        </MenuItem>
+                    </items>
+                  </ContextMenu>
+               </contextMenu>
+            </JFXButton>
+            <Accordion fx:id="semi_root" layoutX="113.0" layoutY="9.0" prefHeight="716.0" prefWidth="1236.0">
+              <panes>
+                <TitledPane fx:id="_semi_root_ch_1" prefHeight="630.0" prefWidth="949.0" text="View Routine">
+                     <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="588.0" prefWidth="775.0">
+                           <children>
+                              <TitledPane prefHeight="408.0" prefWidth="332.0" text="SELECT PATIENT  TODAY'S BIOS" textAlignment="CENTER">
+                                 <content>
+                                    <VBox prefHeight="341.0" prefWidth="318.0">
+                                       <children>
+                                          <GridPane alignment="CENTER" gridLinesVisible="true" prefHeight="355.0" prefWidth="310.0">
+                                            <columnConstraints>
+                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="169.0" minWidth="10.0" prefWidth="78.0" />
+                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="297.0" minWidth="10.0" prefWidth="232.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                             <children>
+                                                <Label alignment="CENTER" prefHeight="40.0" prefWidth="158.0" text="SURNAME" textAlignment="CENTER">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label alignment="CENTER" layoutX="10.0" layoutY="12.0" prefHeight="40.0" prefWidth="158.0" text=" AGE" textAlignment="CENTER" GridPane.rowIndex="2">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label alignment="CENTER" layoutX="10.0" layoutY="55.0" prefHeight="40.0" prefWidth="158.0" text=" SEX" textAlignment="CENTER" GridPane.rowIndex="3">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label alignment="CENTER" layoutX="10.0" layoutY="83.0" prefHeight="40.0" prefWidth="158.0" text=" WEIGHT" textAlignment="CENTER" GridPane.rowIndex="8">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label alignment="CENTER" layoutX="10.0" layoutY="109.0" prefHeight="40.0" prefWidth="97.0" text=" TEMP" textAlignment="CENTER" GridPane.rowIndex="7">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="lbl_name" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="39.0" prefWidth="307.0" GridPane.columnIndex="1">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="lbl_age" layoutX="138.0" layoutY="10.0" prefHeight="39.0" prefWidth="307.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="lbl_age" alignment="CENTER" layoutX="138.0" layoutY="49.0" prefHeight="39.0" prefWidth="307.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="lbl_sex" alignment="CENTER" layoutX="138.0" layoutY="88.0" prefHeight="39.0" prefWidth="307.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="lbl_temp" alignment="CENTER" layoutX="148.0" layoutY="137.0" prefHeight="39.0" prefWidth="307.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="lbl_weight" alignment="CENTER" layoutX="148.0" layoutY="196.0" prefHeight="39.0" prefWidth="307.0" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label alignment="CENTER" layoutX="10.0" layoutY="105.0" prefHeight="40.0" prefWidth="158.0" text=" SYSYOLIS" textAlignment="CENTER" GridPane.rowIndex="4">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label alignment="CENTER" layoutX="10.0" layoutY="152.0" prefHeight="40.0" prefWidth="158.0" text=" DYSYOLIS" textAlignment="CENTER" GridPane.rowIndex="5">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="lbl_systolis" alignment="CENTER" layoutX="82.0" layoutY="106.0" prefHeight="39.0" prefWidth="307.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="lbl_dystolis" alignment="CENTER" layoutX="82.0" layoutY="153.0" prefHeight="39.0" prefWidth="307.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label alignment="CENTER" layoutX="10.0" layoutY="174.0" prefHeight="40.0" prefWidth="158.0" text=" PULSE" textAlignment="CENTER" GridPane.rowIndex="6">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="lbl_pulse" alignment="CENTER" layoutX="82.0" layoutY="174.0" prefHeight="39.0" prefWidth="307.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="40.0" prefWidth="158.0" text="OTHER NAMES" textAlignment="CENTER" wrapText="true" GridPane.rowIndex="1">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="lbl_O_names" alignment="CENTER" prefHeight="39.0" prefWidth="307.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </VBox>
+                                 </content>
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </TitledPane>
+                              <TitledPane animated="false" layoutY="411.0" prefHeight="218.0" prefWidth="331.0" text="HEALTH DETAILS">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <VBox prefHeight="191.0" prefWidth="333.0">
+                                             <children>
+                                                <TextArea fx:id="txt_complaint" prefHeight="97.0" prefWidth="386.0" promptText="COMPLAINT" wrapText="true" />
+                                                <JFXButton fx:id="btn_complaint_only" prefHeight="25.0" prefWidth="331.0" text="Update Complaint" />
+                                                <TextArea fx:id="txt_history" prefHeight="107.0" prefWidth="386.0" promptText="HISTORY" wrapText="true" />
+                                                <JFXButton fx:id="btn_history_only" layoutX="10.0" layoutY="106.0" prefHeight="25.0" prefWidth="331.0" text="Update History " />
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </AnchorPane>
+                                </content>
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </TitledPane>
+                              <TitledPane layoutX="334.0" layoutY="-1.0" prefHeight="242.0" prefWidth="646.0" text="DIAGNOSTICS">
+                                 <content>
+                                    <VBox>
+                                       <children>
+                                          <HBox onMouseClicked="#clear_list_diag_selection" prefHeight="72.0" prefWidth="532.0">
+                                             <children>
+                                                <TextField fx:id="txt_diagnostic_input" prefHeight="25.0" prefWidth="514.0" promptText="ENTER DIAGNOSTIC HERE" />
+                                                <Pane prefHeight="72.0" prefWidth="12.0" />
+                                                <JFXButton buttonType="RAISED" onAction="#add_diagnostics" prefHeight="74.0" prefWidth="67.0" style="-fx-background-color: WHITE;" text="ADD" />
+                                             </children>
+                                          </HBox>
+                                          <JFXListView fx:id="list_diagnostics" editable="true" fixedCellSize="50.0" onMouseClicked="#list_diagnostic_fill" prefHeight="220.0" prefWidth="532.0" style="-fx-background-color: Transparent;" verticalGap="2.0">
+                                             <contextMenu>
+                                                <ContextMenu>
+                                                  <items>
+                                                      <MenuItem mnemonicParsing="false" onAction="#list_add_diagnostics" text="New">
+                                                         <accelerator>
+                                                            <KeyCodeCombination alt="UP" code="N" control="DOWN" meta="UP" shift="DOWN" shortcut="UP" />
+                                                         </accelerator>
+                                                      </MenuItem>
+                                                      <SeparatorMenuItem mnemonicParsing="false" />
+                                                    <MenuItem mnemonicParsing="false" onAction="#view_selected" text="View">
+                                                         <accelerator>
+                                                            <KeyCodeCombination alt="UP" code="V" control="DOWN" meta="UP" shift="DOWN" shortcut="UP" />
+                                                         </accelerator></MenuItem>
+                                                      <MenuItem mnemonicParsing="false" onAction="#edit_selected" text="Edit" />
+                                                      <SeparatorMenuItem mnemonicParsing="false" />
+                                                      <MenuItem mnemonicParsing="false" onAction="#remove_diagnostics" text="Delete">
+                                                         <accelerator>
+                                                            <KeyCodeCombination alt="UP" code="DELETE" control="DOWN" meta="UP" shift="DOWN" shortcut="UP" />
+                                                         </accelerator></MenuItem>
+                                                  </items>
+                                                </ContextMenu>
+                                             </contextMenu></JFXListView>
+                                       </children>
+                                    </VBox>
+                                 </content>
+                              </TitledPane>
+                              <JFXButton fx:id="r_btn_commit" layoutX="334.0" layoutY="243.0" onAction="#do_save" prefHeight="25.0" prefWidth="645.0" style="-fx-background-color: lightgreen;" text="PRESS TO COMMIT" textFill="WHITE" />
+                              <Pane layoutX="833.0" layoutY="66.0" prefHeight="222.0" prefWidth="93.0" style="-fx-background-color: lightblue;" visible="false">
+                                 <children>
+                                    <Pane fx:id="pane_presc_ctrl" disable="true" layoutX="-1.0" layoutY="46.0" prefHeight="165.0" prefWidth="95.0" />
+                                    <JFXButton fx:id="btn_commit" alignment="CENTER" buttonType="RAISED" layoutX="5.0" layoutY="14.0" onAction="#do_save" prefHeight="32.0" prefWidth="83.0" style="-fx-border-color: DARKGRAY;" text="COMMIT" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                                       <font>
+                                          <Font name="System Bold" size="11.0" />
+                                       </font>
+                                       <ripplerFill>
+                                          <LinearGradient endX="1.0" endY="1.0">
+                                             <stops>
+                                                <Stop color="#ff3dc7" />
+                                                <Stop color="WHITE" offset="1.0" />
+                                             </stops>
+                                          </LinearGradient>
+                                       </ripplerFill>
+                                    </JFXButton>
+                                 </children>
+                              </Pane>
+                              <TitledPane layoutX="336.0" layoutY="272.0" prefHeight="372.0" prefWidth="800.0" text="PRESCRIBE DRUGS HERE">
+                                 <content>
+                                    <AnchorPane prefHeight="346.0" prefWidth="893.0">
+                                       <children>
+                                          <HBox layoutX="8.0" layoutY="47.0" prefHeight="25.0" prefWidth="869.0" spacing="3.0">
+                                             <children>
+                                                <TextField fx:id="txt_drug_code" layoutX="389.0" layoutY="10.0" prefHeight="25.0" prefWidth="75.0" promptText="Drug Code" />
+                                                <TextField fx:id="txt_drug_src_input" prefHeight="25.0" prefWidth="412.0" promptText="type drug here" />
+                                                <TextField fx:id="txt_drug_type" layoutX="360.0" layoutY="10.0" prefHeight="25.0" prefWidth="75.0" promptText="DrugType" />
+                                                <TextField fx:id="txt_presc_dosage" prefHeight="25.0" prefWidth="65.0" promptText="Dosage" />
+                                                <TextField fx:id="txt_presc_freque" prefHeight="25.0" prefWidth="48.0" promptText="freq" />
+                                                <TextField fx:id="txt_presc_duration" prefHeight="25.0" prefWidth="72.0" promptText="Duration" />
+                                                <TextField fx:id="txt_presc_amount" prefHeight="25.0" prefWidth="71.0" promptText="A$" />
+                                                <JFXButton fx:id="btn_prescribe" alignment="CENTER" buttonType="RAISED" onAction="#add_single_prescription" prefHeight="13.0" prefWidth="30.0" style="-fx-background-color: tomato;" text="+" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Impact" size="14.0" />
+                                                   </font>
+                                                </JFXButton>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER" layoutX="10.0" layoutY="294.0" prefHeight="32.0" prefWidth="864.0" spacing="10.0">
+                                             <children>
+                                                <JFXButton fx:id="btn_attach" alignment="CENTER" buttonType="RAISED" disable="true" layoutX="336.0" layoutY="10.0" onAction="#new_attach" prefHeight="32.0" prefWidth="155.0" style="-fx-background-color: ORANGE;" text="ATTACH" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                                                   <font>
+                                                      <Font name="System Bold" size="11.0" />
+                                                   </font>
+                                                </JFXButton>
+                                                <JFXButton fx:id="btn_detach" alignment="CENTER" buttonType="RAISED" disable="true" onAction="#remove_data_prescription" prefHeight="32.0" prefWidth="100.0" style="-fx-background-color: DARKGRAY;" text="DETACH" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                                                   <font>
+                                                      <Font name="System Bold" size="11.0" />
+                                                   </font>
+                                                </JFXButton>
+                                             </children>
+                                          </HBox>
+                                          <TableView fx:id="table_of_presc" layoutX="6.0" layoutY="77.0" prefHeight="207.0" prefWidth="870.0">
+                                            <columns>
+                                                <TableColumn fx:id="col_drug_code" prefWidth="69.0" text="Drug Code" />
+                                              <TableColumn fx:id="col_drug" prefWidth="426.0" text="Drug" />
+                                                <TableColumn fx:id="col_drug_type" prefWidth="73.0" text="Drug Type" />
+                                              <TableColumn fx:id="col_dosage" prefWidth="64.0" text="Dosage" />
+                                                <TableColumn fx:id="col_freg" prefWidth="76.0" text="Freguency" />
+                                                <TableColumn fx:id="col_duration" prefWidth="75.0" text="Duation" />
+                                                <TableColumn fx:id="col_amount" prefWidth="86.0" text="Amount" />
+                                            </columns>
+                                          </TableView>
+                                          <TextField fx:id="txt_all_drug_part" layoutX="10.0" layoutY="19.0" prefHeight="25.0" prefWidth="540.0" promptText="Search drug by code, name and type" />
+                                          <JFXButton fx:id="btn_calculate_quantity" alignment="CENTER" layoutX="847.0" layoutY="6.0" onAction="#calculate_quantity" prefHeight="25.0" prefWidth="30.0" style="-fx-background-color: #f1a121;" text="c" textFill="WHITE">
+                                             <font>
+                                                <Font name="Impact" size="14.0" />
+                                             </font>
+                                          </JFXButton>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                                 <contextMenu>
+                                    <ContextMenu>
+                                       <items>
+                                          <MenuItem mnemonicParsing="false" onAction="#remove_single_prescription" text="Remove Selected Row" />
+                                       </items>
+                                    </ContextMenu>
+                                 </contextMenu>
+                              </TitledPane>
+                              <TitledPane animated="false" layoutX="1141.0" prefHeight="269.0" prefWidth="94.0" text="RELEASE">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="243.0" prefWidth="92.0">
+                                       <children>
+                                          <JFXListView fx:id="list_released" layoutX="5.0" onMouseClicked="#load_RP_patient" prefHeight="240.0" prefWidth="84.0" />
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </TitledPane>
+                              <TitledPane animated="false" layoutX="985.0" prefHeight="269.0" prefWidth="156.0" text="LAB RE">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <JFXListView fx:id="list_returnees" layoutX="3.0" onMouseClicked="#_lab_return_clicked" prefHeight="239.0" prefWidth="149.0" />
+                                          <MaskerPane fx:id="masker_lab_re" prefHeight="241.0" prefWidth="154.0" visible="false" />
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </TitledPane>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </TitledPane>
+                <TitledPane fx:id="_semi_root_ch_2" text="Management">
+                     <content>
+                        <AnchorPane prefHeight="155.0" prefWidth="837.0">
+                           <children>
+                              <VBox prefHeight="627.0" prefWidth="255.0" spacing="2.0">
+                                 <children>
+                                    <TitledPane prefHeight="305.0" prefWidth="255.0" text="TODAY'S PATIENT STATUS">
+                                       <content>
+                                          <Pane prefHeight="200.0" prefWidth="289.0" style="-fx-background-color: lightblue;">
+                                             <children>
+                                                <HBox prefHeight="282.0" prefWidth="255.0">
+                                                   <children>
+                                                      <TitledPane animated="false" layoutX="10.0" layoutY="10.0" prefHeight="280.0" prefWidth="126.0" text="TO LABORATORY">
+                                                         <content>
+                                                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                               <children>
+                                                                  <JFXListView fx:id="list_lab" onMouseClicked="#_lab_out_clicked" prefHeight="252.0" prefWidth="122.0" />
+                                                               </children>
+                                                            </AnchorPane>
+                                                         </content>
+                                                      </TitledPane>
+                                                      <TitledPane animated="false" prefHeight="281.0" prefWidth="130.0" text="DETAINED">
+                                                        <content>
+                                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="146.0" prefWidth="145.0">
+                                                               <children>
+                                                                  <JFXListView fx:id="list_detained" layoutX="-3.0" layoutY="-3.0" onMouseClicked="#_lab_detained_clicked" prefHeight="258.0" prefWidth="128.0" />
+                                                               </children>
+                                                            </AnchorPane>
+                                                        </content>
+                                                      </TitledPane>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </Pane>
+                                       </content>
+                                    </TitledPane>
+                                    <TitledPane prefHeight="321.0" prefWidth="247.0">
+                                       <content>
+                                          <Pane prefHeight="200.0" prefWidth="289.0" style="-fx-background-color: lightgreen;">
+                                             <children>
+                                                <HBox prefHeight="297.0" prefWidth="255.0">
+                                                   <children>
+                                                      <TitledPane fx:id="refered_pane" animated="false" prefHeight="297.0" prefWidth="132.0" text="REFERED">
+                                                        <content>
+                                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                               <children>
+                                                                  <JFXListView fx:id="list_refered" layoutX="-2.0" layoutY="1.0" onMouseClicked="#refered_list_clicked" prefHeight="269.0" prefWidth="131.0" />
+                                                               </children>
+                                                            </AnchorPane>
+                                                        </content>
+                                                      </TitledPane>
+                                                      <TitledPane animated="false" prefHeight="298.0" prefWidth="120.0" text="UNATTENDED">
+                                                         <content>
+                                                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                               <children>
+                                                                  <JFXListView fx:id="list_unAttended" layoutX="-1.0" layoutY="-4.0" onMouseClicked="#un_attended_clicked" prefHeight="276.0" prefWidth="119.0" />
+                                                               </children>
+                                                            </AnchorPane>
+                                                         </content>
+                                                      </TitledPane>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </Pane>
+                                       </content>
+                                    </TitledPane>
+                                 </children>
+                              </VBox>
+                              <TitledPane animated="false" layoutX="289.0" layoutY="3.0" prefHeight="621.0" prefWidth="143.0" text="REVIEW LIST">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <VBox alignment="TOP_CENTER" layoutX="5.0" layoutY="8.0" prefHeight="71.0" prefWidth="131.0">
+                                             <children>
+                                                <Label text="REVIEW DATES" textFill="#9f9f9f">
+                                                   <font>
+                                                      <Font name="System Bold" size="13.0" />
+                                                   </font>
+                                                </Label>
+                                                <ComboBox fx:id="review_cbo" prefHeight="35.0" prefWidth="131.0" />
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="BOTTOM_CENTER" layoutX="14.0" layoutY="71.0" prefHeight="516.0" prefWidth="108.0">
+                                             <children>
+                                                <Label text="PATIENTS" textFill="#9f9f9f">
+                                                   <font>
+                                                      <Font name="System Bold" size="13.0" />
+                                                   </font>
+                                                </Label>
+                                                <JFXListView fx:id="review_lister" prefHeight="536.0" prefWidth="108.0" />
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </AnchorPane>
+                                </content>
+                              </TitledPane>
+                           </children></AnchorPane>
+                     </content>
+                  </TitledPane>
+                  <TitledPane fx:id="_semi_root_ch_3" animated="false" text="untitled">
+                     <content>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <TableView fx:id="table_dedicated" layoutX="166.0" layoutY="80.0" prefHeight="480.0" prefWidth="902.0">
+                                <columns>
+                                    <TableColumn prefWidth="351.0" style="-FX-BACKGROUND-COLOR: GOLD;" text="PATIENT FLAT DETAILS">
+                                       <columns>
+                                        <TableColumn fx:id="col_doc_id" prefWidth="140.0" style="-FX-BACKGROUND-COLOR: LIGHTGREEN;" text="DOCTORS ID" />
+                                        <TableColumn fx:id="col_pat_id" prefWidth="122.0" style="-FX-BACKGROUND-COLOR: LIGHTGREEN;" text="PATIENTS ID" />
+                                          <TableColumn fx:id="col_date_in" prefWidth="82.0" style="-FX-BACKGROUND-COLOR: LIGHTGREEN;" text="TIME IN" />
+                                          <TableColumn fx:id="col_date_out" prefWidth="97.0" text="TIME OUT" />
+                                       </columns>
+                                    </TableColumn>
+                                    <TableColumn minWidth="0.0" prefWidth="711.0" style="-FX-BACKGROUND-COLOR: PINK;" text="PATIENT HEALTH DETAILS">
+                                       <columns>
+                                          <TableColumn fx:id="col_weight" prefWidth="118.0" style="-FX-BACKGROUND-COLOR: LIGHTBLUE;" text="WEIGHT" />
+                                          <TableColumn fx:id="col_temp" prefWidth="112.0" style="-FX-BACKGROUND-COLOR: LIGHTBLUE;" text="TEMPERATURE" />
+                                          <TableColumn prefWidth="225.0" style="-FX-BACKGROUND-COLOR: LIGHTBLUE;" text="BLOOD PRESSURE">
+                                             <columns>
+                                                <TableColumn fx:id="col_sys" style="-FX-BACKGROUND-COLOR: ORANGE;" text="SYS" />
+                                                <TableColumn fx:id="col_dys" prefWidth="77.0" style="-FX-BACKGROUND-COLOR: ORANGE;" text="DYS" />
+                                                <TableColumn fx:id="col_pulse" prefWidth="68.0" style="-FX-BACKGROUND-COLOR: ORANGE;" text="PULSE" />
+                                             </columns>
+                                          </TableColumn>
+                                       </columns>
+                                    </TableColumn>
+                                </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </TitledPane>
+              </panes>
+            </Accordion>
+            <MaskerPane fx:id="masker" prefHeight="716.0" prefWidth="1356.0" text="Please wait while we resolve our network" visible="false" />
+            <TitledPane layoutX="2.0" layoutY="444.0" prefHeight="269.0" prefWidth="108.0" text="EMERGENCY" textAlignment="CENTER">
+               <content>
+                  <JFXListView fx:id="emgt_list_incoming_Patients_" onMouseClicked="#emgt_list_incoming_mouse_clicked" prefHeight="617.0" prefWidth="113.0" />
+               </content>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </TitledPane>
+         </children>
+    </AnchorPane>
+      <Label fx:id="root_lbl_notificator" alignment="CENTER" prefHeight="27.0" prefWidth="1356.0" text="Notificator:" wrapText="true">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+  </children>
+</VBox>

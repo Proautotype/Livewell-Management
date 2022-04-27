@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import org.controlsfx.control.MaskerPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="748.0" prefWidth="1350.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.Accountancy.Client_sectionController">
+    <center>
+        <SplitPane dividerPositions="0.3041733547351525" prefHeight="200.0" prefWidth="200.0">
+            <items>
+                <AnchorPane prefHeight="746.0" prefWidth="507.0">
+                    <children>
+                        <Pane layoutX="2.0" prefHeight="40.0" prefWidth="373.0" style="-fx-background-color: gray;" AnchorPane.bottomAnchor="706.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
+                            <children>
+                                <Label layoutX="129.0" layoutY="11.0" text="CREATE A CLIENT" textFill="WHITE">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Label>
+                                <JFXButton layoutX="11.0" layoutY="7.0" onAction="#do_new_client" style="-fx-border-color: linear-gradient(lightgreen,lightblue);" text="New" textFill="WHITE" />
+                            </children>
+                        </Pane>
+                        <JFXTextField fx:id="txt_id" labelFloat="true" layoutX="16.0" layoutY="140.0" prefHeight="35.0" prefWidth="316.0" promptText="ID" style="-fx-border-color: gray;" unFocusColor="WHITE">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                            <padding>
+                                <Insets left="3.0" right="3.0" />
+                            </padding>
+                        </JFXTextField>
+                        <JFXTextField fx:id="txt_client_name" labelFloat="true" layoutX="16.0" layoutY="203.0" prefHeight="35.0" prefWidth="316.0" promptText="NAME" style="-fx-border-color: gray;" unFocusColor="#4d4d4d00">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                            <padding>
+                                <Insets left="3.0" right="3.0" />
+                            </padding>
+                        </JFXTextField>
+                        <JFXTextField fx:id="txt_client_contact" labelFloat="true" layoutX="16.0" layoutY="268.0" prefHeight="37.0" prefWidth="316.0" promptText="CONTACT" style="-fx-border-color: gray;" unFocusColor="#4d4d4d00">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                            <padding>
+                                <Insets left="3.0" right="3.0" />
+                            </padding>
+                        </JFXTextField>
+                        <JFXTextField fx:id="txt_client_addr" labelFloat="true" layoutX="16.0" layoutY="333.0" prefHeight="34.0" prefWidth="316.0" promptText="ADDRESS" style="-fx-border-color: gray;" unFocusColor="#4d4d4d00">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                            <padding>
+                                <Insets left="3.0" right="3.0" />
+                            </padding>
+                        </JFXTextField>
+                        <JFXTextArea fx:id="txt_client_desc" labelFloat="true" layoutX="15.0" layoutY="398.0" prefHeight="108.0" prefWidth="316.0" promptText="DESCRIPTION" style="-fx-border-color: gray;" unFocusColor="#4d4d4d00">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                            <padding>
+                                <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                            </padding>
+                        </JFXTextArea>
+                        <JFXRadioButton fx:id="rd_client_type_personal" layoutX="16.0" layoutY="102.0" selected="true" text="Personal">
+                            <toggleGroup>
+                                <ToggleGroup fx:id="client_type" />
+                            </toggleGroup>
+                        </JFXRadioButton>
+                        <JFXRadioButton fx:id="rd_client_type_company" layoutX="118.0" layoutY="102.0" text="Company" toggleGroup="$client_type" />
+                        <JFXButton fx:id="txt_apply" layoutX="14.0" layoutY="535.0" onAction="#do_apply" prefHeight="46.0" prefWidth="153.0" style="-fx-background-color: gray; -fx-border-width: 2px;" text="APPLY">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <ripplerFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="#73ff61" />
+                              <Stop color="#449ddd" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </ripplerFill>
+                     <textFill>
+                        <LinearGradient endX="0.5666666666666667" endY="1.0" startX="0.21428571428571427">
+                           <stops>
+                              <Stop color="#82ff7a" />
+                              <Stop color="#46ddff" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </textFill></JFXButton>
+                        <MaskerPane fx:id="parent_masker" layoutX="5.0" layoutY="3.0" prefHeight="740.0" prefWidth="371.0" visible="false" />
+                  <JFXButton fx:id="btn_update" layoutX="178.0" layoutY="535.0" onAction="#do_update" prefHeight="46.0" prefWidth="153.0" style="-fx-background-color: gray; -fx-border-width: 2px;" text="CHANGE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <ripplerFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="#73ff61" />
+                              <Stop color="#449ddd" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </ripplerFill>
+                     <textFill>
+                        <LinearGradient endX="0.5666666666666667" endY="1.0" startX="0.21428571428571427">
+                           <stops>
+                              <Stop color="#82ff7a" />
+                              <Stop color="#46ddff" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
+                  </JFXButton>
+                    </children>
+                </AnchorPane>
+                <AnchorPane fx:id="client_statement_masker" layoutX="10.0" layoutY="10.0" prefHeight="747.0" prefWidth="811.0">
+                    <children>
+                        <Pane layoutX="1.0" prefHeight="41.0" prefWidth="863.0" style="-fx-background-color: gray;">
+                            <children>
+                                <Label layoutX="102.0" layoutY="8.0" prefHeight="25.0" prefWidth="217.0" text="CLIENT ACCOUNT STATEMENT" textFill="WHITE">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Label>
+                        <JFXButton layoutX="8.0" layoutY="8.0" onAction="#do_stmt_make_new" prefHeight="27.0" prefWidth="77.0" style="-fx-border-color: linear-gradient(lightgreen,lightblue);" text="Make New" textFill="WHITE" />
+                            </children>
+                        </Pane>
+                        <JFXRadioButton fx:id="rd_stmt_rm" layoutX="14.0" layoutY="68.0" selected="true" text="RAW MATERIAL">
+                            <toggleGroup>
+                                <ToggleGroup fx:id="stmt_radio_grup" />
+                            </toggleGroup>
+                        </JFXRadioButton>
+                        <JFXRadioButton fx:id="rd_stmt_sfp" layoutX="14.0" layoutY="97.0" text="SEMI FINISHED PRODUCT" toggleGroup="$stmt_radio_grup" />
+                              <VBox layoutX="22.0" layoutY="192.0" prefHeight="518.0" prefWidth="824.0" spacing="5.0">
+                                  <children>
+                                      <HBox prefHeight="18.0" prefWidth="824.0" spacing="5.0">
+                                          <children>
+                              <Label prefHeight="28.0" prefWidth="86.0" style="-fx-background-color: #dbdaae;" text="Search Specific  " />
+                              <ComboBox fx:id="cbo_stmt_search" prefHeight="26.0" prefWidth="156.0" />
+                                              <TextField fx:id="txt_stmt_search" prefHeight="29.0" prefWidth="252.0" />
+                                              <Button mnemonicParsing="false" onAction="#stmt_make_search" prefHeight="29.0" prefWidth="84.0" text="Search">
+                                                  <graphic>
+                                                      <ImageView fitHeight="19.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                                                          <image>
+                                                              <Image url="@../../png/magnifying-glass.png" />
+                                                          </image>
+                                                      </ImageView>
+                                                  </graphic>
+                                              </Button>
+                                          </children>
+                                      </HBox>
+                                      <TableView fx:id="tableView_stmts" onMouseClicked="#tableView_stmts_mouse_clicked" prefHeight="479.0" prefWidth="824.0">
+                                          <columns>
+                                              <TableColumn fx:id="col_stmt_cid" prefWidth="50.0" text="CID" />
+                                              <TableColumn fx:id="col_stmt_date" prefWidth="61.0" text="DATE" />
+                                              <TableColumn fx:id="col_stmt_item" prefWidth="327.0" text="ITEM" />
+                                              <TableColumn fx:id="col_stmt_item_type" prefWidth="82.0" text="ITEM TYPE" />
+                                              <TableColumn fx:id="col_stmt_qty" prefWidth="71.0" text="QTY(KG)" />
+                                              <TableColumn fx:id="col_stmt_cost" prefWidth="62.0" text="COST" />
+                                              <TableColumn fx:id="col_stmt_amt_paid" minWidth="0.0" prefWidth="85.0" text="AMT PAID" />
+                                              <TableColumn fx:id="col_stmt_balance" prefWidth="85.0" text="BALANCE" />
+                                          </columns>
+                                      </TableView>
+                                  </children>
+                              </VBox>
+                        <MaskerPane fx:id="stmt_masker" prefHeight="707.0" prefWidth="839.0" visible="false" />
+                  <ComboBox fx:id="txt_stmt_product" layoutX="463.0" layoutY="57.0" prefHeight="30.0" prefWidth="249.0" promptText="Material " />
+                  <TextField fx:id="txt_stmt_qty" layoutX="762.0" layoutY="58.0" prefHeight="30.0" prefWidth="77.0" promptText="Quantity" />
+                  <GridPane layoutX="427.0" layoutY="135.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                  </GridPane>
+                  <TextField fx:id="txt_stmt_cost" editable="false" layoutX="304.0" layoutY="100.0" prefHeight="30.0" prefWidth="75.0" promptText="Cost" />
+                  <TextField fx:id="txt_stmt_amtPaid" layoutX="461.0" layoutY="101.0" prefHeight="30.0" prefWidth="72.0" promptText="AMT PAID" />
+                        <JFXButton buttonType="RAISED" layoutX="542.0" layoutY="106.0" onAction="#do_stmt_curl" prefHeight="25.0" prefWidth="39.0" style="-fx-border-color: gray;" text="curl">
+                            <font>
+                                <Font size="10.0" />
+                            </font>
+                        </JFXButton>
+                  <TextField fx:id="txt_stmt_balance" layoutX="671.0" layoutY="104.0" prefHeight="30.0" prefWidth="68.0" promptText="Balance" />
+                        <JFXButton fx:id="btn_stmt_add" disable="true" layoutX="748.0" layoutY="104.0" onAction="#do_stmt_add" prefHeight="30.0" prefWidth="91.0" style="-fx-background-color: lightgreen;" text="ADD">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+                  <TextField fx:id="txt_pid" layoutX="305.0" layoutY="57.0" prefHeight="31.0" prefWidth="74.0" promptText="PID" />
+                  <Label layoutX="259.0" layoutY="58.0" prefHeight="29.0" prefWidth="37.0" style="-fx-background-color: #DBDBAC;" text="PID">
+                     <padding>
+                        <Insets left="1.0" />
+                     </padding>
+                  </Label>
+                  <Label layoutX="388.0" layoutY="58.0" prefHeight="29.0" prefWidth="69.0" style="-fx-background-color: #DBDBAC;" text="MATERIAL ">
+                     <padding>
+                        <Insets left="1.0" />
+                     </padding>
+                  </Label>
+                  <Label layoutX="720.0" layoutY="59.0" prefHeight="29.0" prefWidth="39.0" style="-fx-background-color: #DBDBAC;" text="QTY">
+                     <padding>
+                        <Insets left="1.0" />
+                     </padding>
+                  </Label>
+                  <Label layoutX="258.0" layoutY="101.0" prefHeight="29.0" prefWidth="42.0" style="-fx-background-color: #DBDBAC;" text="COST">
+                     <padding>
+                        <Insets left="1.0" />
+                     </padding>
+                  </Label>
+                  <Label layoutX="388.0" layoutY="102.0" prefHeight="29.0" prefWidth="67.0" style="-fx-background-color: #DBDBAC;" text="AMT PAID">
+                     <padding>
+                        <Insets left="1.0" />
+                     </padding>
+                  </Label>
+                  <Label layoutX="592.0" layoutY="104.0" prefHeight="29.0" prefWidth="69.0" style="-fx-background-color: #DBDBAC;" text="BALANCE">
+                     <padding>
+                        <Insets left="1.0" />
+                     </padding>
+                  </Label>
+                    </children>
+                </AnchorPane>
+            </items>
+        </SplitPane>
+    </center>
+    <left>
+        <JFXListView fx:id="listView_myClient" onMouseClicked="#myClient_mouse_clicked" prefHeight="748.0" prefWidth="108.0" style="-fx-background-color: transparent;" BorderPane.alignment="CENTER" />
+    </left>
+</BorderPane>

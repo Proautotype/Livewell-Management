@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.13.0.final using JasperReports Library version 6.13.0-46ada4d1be8f3c5985fd0b6146f3ed44caed6f05  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Leaf_Green" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e7eebaa4-068b-407f-bf7a-d4c2e72a1292">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="479"/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="521"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="mySql my"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString language="SQL">
+		<![CDATA[select  
+lab_kft.*, 
+users.customId,users.fname,users.sname,users.age 
+from lab_kft,users 
+where  lab_kft.pid = users.customId]]>
+	</queryString>
+	<field name="customId" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="customId"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="users"/>
+	</field>
+	<field name="fname" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="fname"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="users"/>
+	</field>
+	<field name="sname" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="sname"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="users"/>
+	</field>
+	<field name="age" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="age"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="users"/>
+	</field>
+	<field name="sodium" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="sodium"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lab_kft"/>
+	</field>
+	<field name="chloride" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="chloride"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lab_kft"/>
+	</field>
+	<field name="total_co2" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="total_co2"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lab_kft"/>
+	</field>
+	<field name="urea" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="urea"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lab_kft"/>
+	</field>
+	<field name="creatinine" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="creatinine"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lab_kft"/>
+	</field>
+	<field name="egfr" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="egfr"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lab_kft"/>
+	</field>
+	<field name="on_date" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="on_date"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lab_kft"/>
+	</field>
+	<field name="record_time" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.label" value="record_time"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lab_kft"/>
+	</field>
+	<field name="potassium" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="potassium"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lab_kft"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<image>
+				<reportElement x="275" y="0" width="300" height="64" uuid="d7cb9de5-f1d6-4e9a-8441-72f5e2127742"/>
+				<imageExpression><![CDATA["leaf_banner_green.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement style="Title" x="0" y="13" width="263" height="33" uuid="3eb8e1ab-7e38-4368-89db-62b6501a8c67"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Leaf Green Title]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="100" y="46" width="174" height="22" uuid="0b5308cc-82cf-49a0-8011-6f875d4c5e32"/>
+				<text><![CDATA[Leaf Green SubTitle]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1" uuid="d69c6691-e92e-45c5-bf2d-c1dc15dabb91"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="19" width="42" height="15" uuid="fd906b1b-a3cb-4157-84c5-4fa56bdf2288">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7bea2c6b-5474-4675-8860-d2bbd7e97a0a"/>
+				</reportElement>
+				<text><![CDATA[customId]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="42" y="19" width="42" height="15" uuid="fbbb3c7a-beb6-45c8-9b18-d21b91dc303a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2cd37b16-ddf4-43b2-be59-e24251bd3d3c"/>
+				</reportElement>
+				<text><![CDATA[fname]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="84" y="19" width="42" height="15" uuid="e21d7566-f79c-4f67-8a6c-57aa1ca57b62">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="adb73760-8ffe-4f5e-9679-809967588d6d"/>
+				</reportElement>
+				<text><![CDATA[sname]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="126" y="19" width="42" height="15" uuid="df144142-f57a-4f05-85dc-91ba8173f2f7">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="67df43f3-cde7-48b4-800e-500677fb941f"/>
+				</reportElement>
+				<text><![CDATA[age]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="168" y="19" width="42" height="15" uuid="e1b422d3-ccc7-40cc-83f6-3378e50b63a8">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2a0f297f-1a8c-4257-b66e-7088da1955cf"/>
+				</reportElement>
+				<text><![CDATA[sodium]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="210" y="19" width="42" height="15" uuid="a81d81e3-d5c4-43ab-ac35-5d587132876d">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f6c39902-0c83-47a0-8ece-60f11a8b3f7e"/>
+				</reportElement>
+				<text><![CDATA[chloride]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="252" y="19" width="42" height="15" uuid="aa5bd215-8a2c-4e47-9ea3-a1e48fd19ef0">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0808a578-8936-4c4c-b905-f3a13086209e"/>
+				</reportElement>
+				<text><![CDATA[total_co2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="294" y="19" width="42" height="15" uuid="36580981-16a8-478c-84d5-12807c56c8f1">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ada082b6-a2fb-48da-b602-c7981ca275e9"/>
+				</reportElement>
+				<text><![CDATA[urea]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="336" y="19" width="42" height="15" uuid="858290bc-cc66-48b8-a624-5870c092cce8">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="37b78eef-5148-4d8e-b8b1-a79a2f833f7a"/>
+				</reportElement>
+				<text><![CDATA[creatinine]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="378" y="19" width="42" height="15" uuid="2f9e6e2b-ca7f-40fe-946b-92f779279e5a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6c9e933a-9fba-4bfe-8311-dfe93140d5f6"/>
+				</reportElement>
+				<text><![CDATA[egfr]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="420" y="19" width="42" height="15" uuid="f8446792-8571-4663-991c-4054332463d5">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="03da9a59-58ff-45af-996b-0330f015708c"/>
+				</reportElement>
+				<text><![CDATA[on_date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="462" y="19" width="42" height="15" uuid="bd430dbb-c91c-45b7-bf30-75059b0ee6f2">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="68e42f81-fb13-4d16-8136-bcb61689b30d"/>
+				</reportElement>
+				<text><![CDATA[record_time]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="504" y="19" width="42" height="15" uuid="5b0a4d29-b472-4caa-a6cb-c189f6d4d405">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="64d4bae7-4b21-48d7-bea4-132013ae2161"/>
+				</reportElement>
+				<text><![CDATA[potassium]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="f367c019-9cb7-431c-8713-5a96f9b889aa"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement style="Detail" x="0" y="0" width="42" height="15" uuid="b01bd60c-e604-4f63-a0d5-a33a930e5433">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7bea2c6b-5474-4675-8860-d2bbd7e97a0a"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{customId}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="42" y="0" width="42" height="15" uuid="2ff32836-b846-4ef2-af94-7820efa9225a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2cd37b16-ddf4-43b2-be59-e24251bd3d3c"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{fname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="84" y="0" width="42" height="15" uuid="54ff003a-38ad-4c51-bac3-a26538b11d42">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="adb73760-8ffe-4f5e-9679-809967588d6d"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{sname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="126" y="0" width="42" height="15" uuid="6c9fb091-612c-489c-8b64-f663348e73f7">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="67df43f3-cde7-48b4-800e-500677fb941f"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{age}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="168" y="0" width="42" height="15" uuid="bd0bd760-c3f2-450c-80ab-3550a0b405f7">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2a0f297f-1a8c-4257-b66e-7088da1955cf"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{sodium}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="210" y="0" width="42" height="15" uuid="5e18d1ef-3dbd-43cd-abce-ef38dabde0ba">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f6c39902-0c83-47a0-8ece-60f11a8b3f7e"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{chloride}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="252" y="0" width="42" height="15" uuid="a9ffd739-6dcb-4d93-b1c2-28a7af0fcec1">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0808a578-8936-4c4c-b905-f3a13086209e"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{total_co2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="294" y="0" width="42" height="15" uuid="f1c4e86b-f835-405c-82a5-94942041a39e">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ada082b6-a2fb-48da-b602-c7981ca275e9"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{urea}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="336" y="0" width="42" height="15" uuid="1658a939-c618-4766-b62c-e4f281140bc3">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="37b78eef-5148-4d8e-b8b1-a79a2f833f7a"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{creatinine}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="378" y="0" width="42" height="15" uuid="687075b4-de18-4fce-9862-018e2588681e">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6c9e933a-9fba-4bfe-8311-dfe93140d5f6"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{egfr}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="420" y="0" width="42" height="15" uuid="5d13f49e-efae-42eb-bcb0-75bddf39b140">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="03da9a59-58ff-45af-996b-0330f015708c"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{on_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="462" y="0" width="42" height="15" uuid="d5ccec7a-f857-4ea4-ac32-b1e5e6ca1cab">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="68e42f81-fb13-4d16-8136-bcb61689b30d"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{record_time}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="504" y="0" width="42" height="15" uuid="60b1195a-5a3b-4835-b3b0-a4fa7ca7c001">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="64d4bae7-4b21-48d7-bea4-132013ae2161"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{potassium}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="02519f40-8679-4e40-a1f1-699bc025a206"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" uuid="6f13e17d-4b46-4ede-ab63-9d2685ec9c16"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="6857db7e-824a-4cda-b8dc-fe5c95aca145"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="0" y="0" width="197" height="20" uuid="ef9fc35f-c45f-4ec6-a5cc-ec2020109ea7"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

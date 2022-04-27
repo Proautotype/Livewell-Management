@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import org.controlsfx.control.MaskerPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="382.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.payAtten.SettingsController">
+   <children>
+      <TextField fx:id="txt_hour" alignment="CENTER" layoutX="32.0" layoutY="23.0" onAction="#do_setTimer" prefHeight="102.0" prefWidth="172.0" style="-fx-text-fill: #dbdbdb;" text="0">
+         <font>
+            <Font size="55.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txt_min" alignment="CENTER" layoutX="213.0" layoutY="23.0" onAction="#do_setTimer" prefHeight="102.0" prefWidth="172.0" style="-fx-text-fill: #dbdbdb;" text="0">
+         <font>
+            <Font size="55.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txt_sec" alignment="CENTER" layoutX="397.0" layoutY="23.0" onAction="#do_setTimer" prefHeight="102.0" prefWidth="172.0" style="-fx-text-fill: #dbdbdb;" text="0">
+         <font>
+            <Font size="55.0" />
+         </font>
+      </TextField>
+      <Line endX="411.0" layoutX="135.0" layoutY="172.0" startX="-80.0" stroke="#a1a1a1" />
+      <TextField fx:id="txt_user" layoutX="32.0" layoutY="218.0" prefHeight="43.0" prefWidth="254.0">
+         <font>
+            <Font size="18.0" />
+         </font></TextField>
+      <PasswordField fx:id="txt_pword" layoutX="32.0" layoutY="296.0" prefHeight="43.0" prefWidth="254.0">
+         <font>
+            <Font size="18.0" />
+         </font></PasswordField>
+      <JFXButton buttonType="RAISED" layoutX="406.0" layoutY="222.0" onAction="#do_createUser" prefHeight="43.0" prefWidth="154.0" style="-fx-background-color: lightgreen;" text="CREATE USER" />
+      <Label layoutX="32.0" layoutY="274.0" text="Enter user password" />
+      <Label layoutX="33.0" layoutY="196.0" text="Enter user contact" />
+      <JFXButton buttonType="RAISED" layoutX="406.0" layoutY="300.0" onAction="#do_updateuser" prefHeight="43.0" prefWidth="154.0" style="-fx-background-color: lightgreen;" text="UPDATE USER" />
+      <MaskerPane fx:id="parent_masker" layoutX="6.0" layoutY="176.0" prefHeight="200.0" prefWidth="589.0" text="Working" visible="false" />
+   </children>
+</AnchorPane>

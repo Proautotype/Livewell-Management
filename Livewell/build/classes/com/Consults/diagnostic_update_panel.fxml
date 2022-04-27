@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import org.controlsfx.control.ListSelectionView?>
+
+<VBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="643.0" prefWidth="642.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.Consults.Diagnostic_update_panelController">
+   <children>
+      <Pane prefHeight="69.0" prefWidth="600.0" style="-fx-background-color: white;">
+         <children>
+            <Label layoutX="195.0" layoutY="16.0" text="DIAGNOSIS EDITOR">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <TextArea fx:id="txt_complaint" prefHeight="77.0" prefWidth="600.0" promptText="COMPLAINT" wrapText="true">
+         <VBox.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </VBox.margin>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </TextArea>
+      <TextArea fx:id="history" prefHeight="85.0" prefWidth="600.0" promptText="HISTORY" wrapText="true">
+         <VBox.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </VBox.margin>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </TextArea>
+      <BorderPane prefHeight="394.0" prefWidth="642.0">
+         <bottom>
+            <HBox prefHeight="34.0" prefWidth="600.0" style="-fx-background-color: gray;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label fx:id="lbl_notification" alignment="CENTER" prefHeight="34.0" prefWidth="642.0" />
+               </children>
+            </HBox>
+         </bottom>
+         <center>
+            <ListSelectionView fx:id="list_diagnosis" BorderPane.alignment="CENTER" />
+         </center>
+         <right>
+            <VBox alignment="CENTER" prefHeight="323.0" prefWidth="64.0" BorderPane.alignment="CENTER">
+               <children>
+                  <JFXButton fx:id="btn_done" buttonType="RAISED" onAction="#attach_diagnostic" prefHeight="45.0" prefWidth="59.0" style="-fx-background-color: GRAY;" text="DONE" textFill="WHITE" />
+               </children></VBox>
+         </right>
+         <top>
+            <HBox prefHeight="32.0" prefWidth="642.0">
+               <children>
+                  <TextField fx:id="txt_diagnosis" prefHeight="27.0" prefWidth="499.0">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </TextField>
+                  <JFXButton fx:id="btn_add" onAction="#add_to_diag_list" prefHeight="35.0" prefWidth="126.0" style="-fx-background-color: silver;" text="ADD DIAGNOSTIC" textFill="WHITE" />
+               </children>
+            </HBox>
+         </top>
+      </BorderPane>
+   </children>
+</VBox>

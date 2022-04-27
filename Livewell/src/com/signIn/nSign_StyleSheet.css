@@ -1,0 +1,32 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Oct 3, 2020, 7:57:02 AM
+    Author     : G
+*/
+
+.btnDept{
+    
+}
+.btnDept:hover{
+    -fx-translate-x: 5;
+}
+.btnDept_r{
+    
+}
+.btnDept_r:hover{
+    -fx-translate-x: -5;
+}
+.btnAdmin{
+   
+}
+.btnAdmin:hover{
+    -fx-translate-y: 5;
+}
+@keyFrames rotate{
+    0%:,
+    100%:;
+}

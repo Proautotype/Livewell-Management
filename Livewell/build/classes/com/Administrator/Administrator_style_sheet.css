@@ -1,0 +1,17 @@
+.tab{
+	-fx-pref-width:340px;
+	-fx-pref-height:70px;
+}
+.tab:hover{
+	-fx-background-color:#9E9E9E;
+}
+.user_mgmt_jfxBtn{
+	
+}
+.createUserPane{
+	-fx-background-color:white;	
+}
+
+.createUserPane:hover{
+	
+}

@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXProgressBar?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXToggleButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.web.WebView?>
+<?import org.controlsfx.control.MaskerPane?>
+
+<AnchorPane fx:id="root_Pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#switch_toggle" prefHeight="737.0" prefWidth="1354.0" stylesheets="@dashboard.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.Records.Records_Controller">
+   <children>
+      <MenuBar>
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#new_patient" text="New patient">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="N" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem fx:id="menu_create_patient" mnemonicParsing="false" onAction="#add_NewPatient" text="Create patient">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+                  <MenuItem fx:id="menu_update_patient" mnemonicParsing="false" onAction="#update_old_patient" text="Update patient Info">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="U" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#reset" text="Clear all">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="L" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#load_password_Manager" text="Password Manager" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <JFXToggleButton fx:id="root_tog_en" layoutX="1253.0" layoutY="-3.0" onAction="#pane_enableMent" prefHeight="43.0" prefWidth="101.0" size="7.0" text="DISABLED" toggleColor="#70e3ea">
+         <font>
+            <Font size="10.0" />
+         </font></JFXToggleButton>
+      <JFXComboBox fx:id="root_cbo_search_by" layoutX="2.0" layoutY="28.0" onAction="#load_listBy_Selection" prefHeight="25.0" prefWidth="112.0" promptText="SEARCH BY" />
+      <Pane fx:id="search_Pane" layoutX="2.0" layoutY="57.0" prefHeight="679.0" prefWidth="112.0" style="-fx-background-color: darkgray;">
+         <children>
+            <Label alignment="CENTER" layoutX="11.0" layoutY="4.0" prefHeight="20.0" prefWidth="85.0" text="RESULTS" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="search_lbl_items_found" alignment="CENTER" layoutX="13.0" layoutY="639.0" prefHeight="33.0" prefWidth="85.0" styleClass="today_lbl_statics" text="000" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <JFXButton layoutX="41.0" layoutY="83.0" text="   ">
+               <contextMenu>
+                  <ContextMenu>
+                    <items>
+                      <MenuItem fx:id="fullScreen" mnemonicParsing="false" onAction="#setFullScreen" text="Full Screen">
+                           <accelerator>
+                              <KeyCodeCombination alt="UP" code="F" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator>
+                        </MenuItem>
+                    </items>
+                  </ContextMenu>
+               </contextMenu>
+            </JFXButton>
+            <JFXListView fx:id="search_list_results" layoutX="-1.0" layoutY="25.0" onKeyPressed="#srch_List_toFields_keyMove" onMouseClicked="#srch_List_toFields_mouse" prefHeight="603.0" prefWidth="112.0" />
+            <MaskerPane fx:id="load_masker" layoutX="-8.0" layoutY="-3.0" prefHeight="679.0" prefWidth="122.0" visible="false" />
+         </children>
+      </Pane>
+      <Accordion layoutX="119.0" prefHeight="737.0" prefWidth="1235.0">
+        <panes>
+          <TitledPane animated="false" text="Records">
+               <content>
+                  <AnchorPane fx:id="pane_records" prefHeight="660.0" prefWidth="1233.0">
+                     <children>
+                        <GridPane layoutX="14.0" layoutY="12.0" prefHeight="222.0" prefWidth="367.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="155.0" minWidth="10.0" prefWidth="118.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="249.0" minWidth="10.0" prefWidth="249.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label prefWidth="68.0" text=" Records ID" />
+                              <JFXTextField fx:id="personal_txt_regis_cod" focusColor="WHITE" labelFloat="true" onKeyPressed="#quick_load" onKeyReleased="#quick_load" prefHeight="31.0" prefWidth="249.0" style="-fx-background-color: #d0efff;" unFocusColor="BLACK" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </JFXTextField>
+                              <Label layoutX="10.0" layoutY="17.0" prefWidth="68.0" text=" Surname" GridPane.rowIndex="1" />
+                              <JFXTextField fx:id="personal_txt_surname" focusColor="WHITE" labelFloat="true" onAction="#quick_load_by_names" onKeyPressed="#quick_load_by_names" onKeyReleased="#quick_load_by_names" prefHeight="31.0" prefWidth="249.0" style="-fx-background-color: #d0efff;" unFocusColor="BLACK" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </JFXTextField>
+                              <Label layoutX="10.0" layoutY="47.0" prefHeight="17.0" prefWidth="87.0" text=" Other names" GridPane.rowIndex="2" />
+                              <JFXTextField fx:id="personal_txt_Onames" focusColor="WHITE" labelFloat="true" onKeyPressed="#quick_load_by_names" onKeyReleased="#quick_load_by_names" prefHeight="30.0" prefWidth="158.0" style="-fx-background-color: #d0efff;" unFocusColor="BLACK" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </JFXTextField>
+                              <Label text=" BIRTH DATE" GridPane.rowIndex="3" />
+                              <HBox GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                 <children>
+                                    <Pane prefHeight="37.0" prefWidth="65.0" />
+                                    <JFXDatePicker fx:id="personal_DOB" prefHeight="36.0" prefWidth="311.0" style="-fx-text-align: centre;" />
+                                 </children>
+                              </HBox>
+                              <JFXComboBox fx:id="personal_cbo_Mar_Stat" labelFloat="true" prefHeight="34.0" prefWidth="249.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <JFXComboBox fx:id="personal_cbo_gender" editable="true" labelFloat="true" prefHeight="33.0" prefWidth="244.0" translateZ="90.0" unFocusColor="BLACK" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+                                 <GridPane.margin>
+                                    <Insets />
+                                 </GridPane.margin></JFXComboBox>
+                              <Label layoutX="10.0" layoutY="116.0" text=" MARITAL STATUS" GridPane.rowIndex="4" />
+                              <Label layoutX="10.0" layoutY="148.0" text=" GENDER" GridPane.rowIndex="5" />
+                           </children>
+                        </GridPane>
+                        <GridPane layoutX="14.0" layoutY="239.0" prefHeight="354.0" prefWidth="367.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="155.0" minWidth="10.0" prefWidth="118.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="252.0" minWidth="10.0" prefWidth="249.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label prefWidth="68.0" text=" Occupation" />
+                              <Label layoutX="10.0" layoutY="17.0" prefWidth="68.0" text=" RELIGION" GridPane.rowIndex="1" />
+                              <Label layoutX="10.0" layoutY="47.0" prefHeight="17.0" prefWidth="87.0" text=" PHONE" GridPane.rowIndex="2" />
+                              <Label text=" EMAIL" GridPane.rowIndex="5" />
+                              <Label layoutX="10.0" layoutY="116.0" text=" RELATIVE" GridPane.rowIndex="6" />
+                              <Label layoutX="10.0" layoutY="148.0" text=" CONTACT" GridPane.rowIndex="7" />
+                              <JFXComboBox fx:id="about_txt_occupation" editable="true" labelFloat="true" prefHeight="30.0" prefWidth="249.0" GridPane.columnIndex="1" />
+                              <JFXComboBox fx:id="about_cbo_religion" labelFloat="true" prefHeight="30.0" prefWidth="247.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <JFXTextField fx:id="about_txt_phone" focusColor="WHITE" labelFloat="true" prefHeight="29.0" prefWidth="219.0" style="-fx-background-color: #d0efff;" unFocusColor="BLACK" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </JFXTextField>
+                              <JFXTextField fx:id="about_txt_HD" focusColor="WHITE" labelFloat="true" prefHeight="18.0" prefWidth="219.0" style="-fx-background-color: #d0efff;" unFocusColor="BLACK" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </JFXTextField>
+                              <JFXTextField fx:id="txt_gps" prefHeight="15.0" prefWidth="219.0" style="-fx-background-color: #d0efff;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <JFXTextField fx:id="about_txt_email" focusColor="WHITE" labelFloat="true" prefHeight="30.0" prefWidth="313.0" style="-fx-background-color: #d0efff;" unFocusColor="BLACK" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </JFXTextField>
+                              <JFXTextField fx:id="about_txt_NR" focusColor="WHITE" labelFloat="true" onKeyTyped="#check_relation_exist" onMousePressed="#open_search_scene" prefHeight="30.0" prefWidth="313.0" style="-fx-background-color: #d0efff;" unFocusColor="BLACK" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </JFXTextField>
+                              <JFXTextField fx:id="about_txt_NR_con" focusColor="WHITE" labelFloat="true" prefHeight="30.0" prefWidth="313.0" style="-fx-background-color: #d0efff;" unFocusColor="BLACK" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </JFXTextField>
+                              <Label layoutX="10.0" layoutY="97.0" prefHeight="17.0" prefWidth="87.0" text=" HOUSE NO." GridPane.rowIndex="3" />
+                              <Label layoutX="10.0" layoutY="117.0" prefHeight="17.0" prefWidth="87.0" text=" GPS" GridPane.rowIndex="4" />
+                              <JFXTextField fx:id="loc_txt_district" focusColor="WHITE" labelFloat="true" prefHeight="10.0" prefWidth="219.0" style="-fx-background-color: #d0efff;" unFocusColor="BLACK" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </JFXTextField>
+                              <Label text=" DISTRICT" GridPane.rowIndex="8" />
+                              <JFXComboBox fx:id="loc_cbo_SDis" editable="true" labelFloat="true" prefHeight="25.0" prefWidth="252.0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                              <Label text=" SUB DISTRICT" GridPane.rowIndex="9" />
+                           </children>
+                        </GridPane>
+                        <GridPane layoutX="424.0" layoutY="14.0" prefHeight="64.0" prefWidth="327.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="155.0" minWidth="10.0" prefWidth="92.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="219.0" minWidth="10.0" prefWidth="204.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label prefHeight="17.0" prefWidth="102.0" text=" MEMBERSHIP NO." />
+                              <Label layoutX="10.0" layoutY="17.0" prefHeight="17.0" prefWidth="94.0" text=" ADDRESS ID" GridPane.rowIndex="1" />
+                              <JFXTextField fx:id="loc_txt_HIS_num" focusColor="WHITE" labelFloat="true" onKeyPressed="#insur_num_up" onKeyReleased="#insur_num_up" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: #d0efff;" unFocusColor="#57aaae" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </JFXTextField>
+                              <JFXTextField fx:id="loc_txt_HIS_ID" focusColor="WHITE" labelFloat="true" onKeyPressed="#insur_id_up" onKeyReleased="#insur_id_up" prefHeight="30.0" prefWidth="185.0" style="-fx-background-color: #d0efff;" unFocusColor="BLACK" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </JFXTextField>
+                           </children>
+                        </GridPane>
+                        <Pane layoutX="422.0" layoutY="134.0" prefHeight="526.0" prefWidth="330.0">
+                           <children>
+                              <GridPane gridLinesVisible="true" layoutX="2.0" layoutY="106.0" prefHeight="101.0" prefWidth="327.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="163.0" minWidth="10.0" prefWidth="163.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="219.0" minWidth="10.0" prefWidth="164.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <Label prefHeight="17.0" prefWidth="102.0" text=" INSURANCE " />
+                                    <Label layoutX="10.0" layoutY="17.0" prefHeight="17.0" prefWidth="94.0" text=" CREST" GridPane.rowIndex="1" />
+                                    <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                       <children>
+                                          <Pane prefHeight="32.0" prefWidth="17.0" />
+                                          <JFXRadioButton fx:id="opd_rb_insurance_yes" prefHeight="31.0" prefWidth="86.0" selected="true" text="YES">
+                                             <toggleGroup>
+                                                <ToggleGroup fx:id="rb_insurance_poses1" />
+                                             </toggleGroup>
+                                          </JFXRadioButton>
+                                          <Pane layoutX="10.0" layoutY="10.0" prefHeight="32.0" prefWidth="17.0" />
+                                          <JFXRadioButton fx:id="opd_rb_insurance_no" prefHeight="32.0" prefWidth="83.0" text="NO" toggleGroup="$rb_insurance_poses1" />
+                                       </children>
+                                    </HBox>
+                                    <HBox layoutX="118.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                       <children>
+                                          <Pane prefHeight="34.0" prefWidth="7.0" />
+                                          <JFXRadioButton fx:id="opd_rb_crest_new" prefHeight="33.0" prefWidth="51.0" text="NEW">
+                                             <toggleGroup>
+                                                <ToggleGroup fx:id="rb_crest_old_new1" />
+                                             </toggleGroup>
+                                          </JFXRadioButton>
+                                          <Pane layoutX="10.0" layoutY="10.0" prefHeight="34.0" prefWidth="32.0" />
+                                          <JFXRadioButton fx:id="opd_rb_crest_old" prefHeight="31.0" prefWidth="47.0" selected="true" text="Old" toggleGroup="$rb_crest_old_new1" />
+                                       </children>
+                                    </HBox>
+                                    <JFXTextField fx:id="opd_txt_ccc" alignment="CENTER" focusColor="WHITE" labelFloat="true" prefHeight="30.0" prefWidth="110.0" style="-fx-background-color: #d0efff;" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </JFXTextField>
+                                    <Label layoutX="10.0" layoutY="53.0" prefHeight="17.0" prefWidth="94.0" text=" CCC - NUMBER" GridPane.rowIndex="2" />
+                                 </children>
+                              </GridPane>
+                              <Pane layoutX="1.0" layoutY="14.0" prefHeight="43.0" prefWidth="329.0" style="-fx-bACKGROUND-color: darkgray; -fx-border-width: 2;">
+                                 <children>
+                                    <Label layoutX="66.0" layoutY="11.0" text="OUTPATIENT REGISTER" textFill="WHITE">
+                                       <font>
+                                          <Font name="Stencil" size="18.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Pane>
+                              <Pane fx:id="control_pane111" layoutX="1.0" layoutY="63.0" prefHeight="43.0" prefWidth="329.0" style="-fx-bACKGROUND-color: darkgray; -fx-border-width: 2;">
+                                 <children>
+                                    <HBox layoutX="-1.0" prefHeight="43.0" prefWidth="329.0">
+                                       <children>
+                                          <Pane prefHeight="200.0" prefWidth="200.0">
+                                             <children>
+                                                <Label fx:id="opd_lbl_patient_no" alignment="CENTER" layoutX="19.0" layoutY="9.0" prefHeight="25.0" prefWidth="127.0" style="-fx-border-width: 2;" text="PATIENT NUM" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="System Bold" size="15.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </Pane>
+                                          <Pane prefHeight="43.0" prefWidth="40.0" style="-fx-background-color: WHITE;" />
+                                          <Pane prefHeight="200.0" prefWidth="200.0">
+                                             <children>
+                                                <Label fx:id="opd_lbl_todays_id" alignment="CENTER" layoutX="15.0" layoutY="10.0" prefHeight="25.0" prefWidth="142.0" style="-fx-border-width: 2;" text="TODAY'S ID" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="System Bold" size="15.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </Pane>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </Pane>
+                              <Pane layoutX="1.0" layoutY="321.0" prefHeight="43.0" prefWidth="329.0" style="-fx-bACKGROUND-color: darkgray; -fx-border-width: 2;">
+                                 <children>
+                                    <JFXButton fx:id="opd_add_pat_history" buttonType="RAISED" disable="false" layoutX="282.0" layoutY="5.0" onAction="#opd_addToHistory" onMouseClicked="#rec_typing" prefHeight="33.0" prefWidth="33.0" style="-fx-background-color: darkgray;" styleClass="piJFXButton" text="S" textFill="WHITE" underline="true">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </JFXButton>
+                                    <JFXButton fx:id="opd_update_pat_history" buttonType="RAISED" layoutX="243.0" layoutY="5.0" onAction="#opd_update_ToHistory" onMouseClicked="#rec_typing" prefHeight="33.0" prefWidth="33.0" style="-fx-background-color: darkgray;" styleClass="piJFXButton" text="U" textFill="WHITE" underline="true">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </JFXButton>
+                                    <JFXButton fx:id="opd_delete_pat_history" buttonType="RAISED" layoutX="202.0" layoutY="5.0" onAction="#opd_delete_ToHistory" onMouseClicked="#rec_typing" prefHeight="33.0" prefWidth="33.0" style="-fx-background-color: darkgray;" styleClass="piJFXButton" text="D" textFill="WHITE" underline="true">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </JFXButton>
+                                 </children>
+                              </Pane>
+                              <Label fx:id="opd_lbl_count" alignment="CENTER" layoutX="2.0" layoutY="207.0" prefHeight="112.0" prefWidth="127.0" styleClass="today_lbl_statics" text="0" textAlignment="CENTER" textFill="DARKGRAY">
+                                 <font>
+                                    <Font name="System Bold" size="48.0" />
+                                 </font>
+                              </Label>
+                              <JFXListView fx:id="opd_list_nums_here" layoutX="129.0" layoutY="205.0" prefHeight="116.0" prefWidth="200.0" style="-fx-background-color: TRANSPARENT;" />
+                              <PieChart fx:id="chart_front_today_hist" layoutX="1.0" layoutY="361.0" prefHeight="166.0" prefWidth="328.0" />
+                           </children>
+                        </Pane>
+                        <SplitPane layoutX="783.0" layoutY="12.0" prefHeight="650.0" prefWidth="426.0">
+                           <items>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="619.0" prefWidth="436.0">
+                                 <children>
+                                    <Pane layoutX="2.0" prefHeight="43.0" prefWidth="421.0" style="-fx-background-color: #d0efff;" />
+                                    <TableView fx:id="table_hist" layoutY="76.0" onMouseClicked="#fill_all_from_table" prefHeight="566.0" prefWidth="424.0" style="-fx-background-color: transparent;">
+                                       <columns>
+                                          <TableColumn fx:id="table_hist_ccc" prefWidth="95.0" text="CCC" />
+                                          <TableColumn fx:id="table_hist_pn" prefWidth="106.0" text="OPD" />
+                                          <TableColumn fx:id="table_hist_crest" prefWidth="105.0" text="Crest" />
+                                          <TableColumn fx:id="table_hist_nhis" prefWidth="75.0" text="NHIS" />
+                                       </columns>
+                                    </TableView>
+                                    <JFXComboBox fx:id="hist_cbo_hist_home" layoutX="7.0" layoutY="46.0" onAction="#load_previous_history" onMouseClicked="#load_previous_history_mouse" prefHeight="25.0" prefWidth="296.0" unFocusColor="BLACK" />
+                                    <JFXButton fx:id="btn_print" layoutX="313.0" layoutY="45.0" onAction="#print_sth_hist" prefHeight="27.0" prefWidth="97.0" style="-fx-background-color: white; -fx-border-color: darkgray;" text="EXPORT DATA" />
+                                 </children>
+                              </AnchorPane>
+                           </items>
+                        </SplitPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+               <contextMenu>
+                  <ContextMenu>
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#add_NewPatient" text="Unspecified Action" />
+                        <MenuItem mnemonicParsing="false" onAction="#up" text="Unspecified Action" />
+                    </items>
+                  </ContextMenu>
+               </contextMenu>
+            </TitledPane>
+          <TitledPane animated="false" text="Browser">
+               <content>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <JFXProgressBar fx:id="web_process_progress" layoutX="13.0" layoutY="-1.0" prefHeight="5.0" prefWidth="1198.0" progress="0.0" />
+                        <WebView fx:id="webview_ccc" layoutX="12.0" layoutY="59.0" onScroll="#web_zoomer" prefHeight="535.0" prefWidth="1200.0" />
+                        <TextField fx:id="txt_web_search" layoutX="724.0" layoutY="14.0" prefHeight="43.0" prefWidth="416.0" promptText="SEARCH">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                        <JFXButton layoutX="1140.0" layoutY="14.0" onAction="#go_search" prefHeight="43.0" prefWidth="69.0" style="-fx-border-color: DARKGRAY;" text="GO">
+                           <ripplerFill>
+                              <LinearGradient endX="0.6142857142857143" endY="0.5714285714285714" startX="0.4095238095238095" startY="0.41904761904761906">
+                                 <stops>
+                                    <Stop color="#eeff71" />
+                                    <Stop color="WHITE" offset="1.0" />
+                                 </stops>
+                              </LinearGradient>
+                           </ripplerFill>
+                        </JFXButton>
+                        <JFXButton layoutX="12.0" layoutY="14.0" onAction="#open_ccc_webpage" prefHeight="43.0" prefWidth="69.0" style="-fx-border-color: DARKGRAY;" text="CCC">
+                           <ripplerFill>
+                              <LinearGradient endX="0.6142857142857143" endY="0.5714285714285714" startX="0.4095238095238095" startY="0.41904761904761906">
+                                 <stops>
+                                    <Stop color="#eeff71" />
+                                    <Stop color="WHITE" offset="1.0" />
+                                 </stops>
+                              </LinearGradient>
+                           </ripplerFill>
+                        </JFXButton>
+                     </children>
+                  </AnchorPane>
+               </content></TitledPane>
+        </panes>
+      </Accordion>
+      <MaskerPane fx:id="parentMasker" prefHeight="737.0" prefWidth="1354.0" visible="false" />
+   </children>
+</AnchorPane>

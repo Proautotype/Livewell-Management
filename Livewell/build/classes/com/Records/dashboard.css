@@ -1,0 +1,41 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+
+    
+    
+}
+
+.piJFXButton{
+    -fx-background-radius: 30px;
+    -fx-border-radius: 30px;
+    -fx-background-color: #70e3ea;
+    -fx-border-color: white;
+    -fx-border-width:2px;
+    
+}
+
+.piJFXButton:hover{
+    
+     -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+    -fx-border-style: dotted;
+}
+
+.orJFXComboBox{
+ -fx-background-color:white;
+ -fx-text-align: center;
+}
+
+.sd{
+	border-style: dotted;
+
+}
+
+.today_lbl_statics:hover{
+	-fx-font-size: 22;
+	-fx-background-color:  #70e3ea;
+	
+}
